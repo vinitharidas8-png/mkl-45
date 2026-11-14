@@ -65,9 +65,9 @@ export default function LandingPage() {
                     INITIALIZE SYSTEM <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
-                <Link href="/docs/components/button">
+                <Link href="/components">
                   <Button variant="default" size="lg">
-                    VIEW SPECIFICATIONS
+                    BROWSE COMPONENTS
                   </Button>
                 </Link>
               </div>

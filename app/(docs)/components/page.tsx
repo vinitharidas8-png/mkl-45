@@ -14,6 +14,9 @@ import { useKit } from "@/app/components/my-kit-tray";
 const COMPONENT_CATALOG = [
   { name: "button", title: "Button Keycap", category: "Actions", desc: "7 finish variants, 4 sizes, 80ms down-stroke travel" },
   { name: "kbd", title: "Kbd Tag", category: "Actions", desc: "Miniature double-shot hotkey indicator" },
+  { name: "button-group", title: "Button Group", category: "Actions", desc: "Continuous recessed switchbank tray" },
+  { name: "toggle", title: "Toggle Key", category: "Actions", desc: "Two-state latched push switch with LED" },
+  { name: "hold-to-confirm", title: "Hold-To-Confirm", category: "Actions", desc: "Interlocked safety key with radial hold progress" },
   { name: "input", title: "Input Terminal", category: "Forms", desc: "Amber dot-matrix CRT text entry well" },
   { name: "textarea", title: "Textarea Screen", category: "Forms", desc: "Multiline scanline terminal display" },
   { name: "label", title: "Label Stencil", category: "Forms", desc: "Laser-etched metal label plate with serials" },
@@ -24,18 +27,22 @@ const COMPONENT_CATALOG = [
   { name: "alert", title: "Alert Plate", category: "Feedback", desc: "Tactical plate with diagonal hazard striping" },
   { name: "progress", title: "Chevron Progress", category: "Feedback", desc: "12-segment illuminated amber chevron meter" },
   { name: "spinner", title: "CNC Loaders", category: "Feedback", desc: "Gears, dotted CRT rings, and tri-state LEDs" },
+  { name: "skeleton", title: "Hatched Skeleton", category: "Feedback", desc: "Diagonal cross-hatched placeholder plate" },
   { name: "badge", title: "Tactical Badge", category: "Feedback", desc: "Stamped metal chips and condition chips" },
+  { name: "empty-state", title: "Empty CRT Screen", category: "Feedback", desc: "Raster phosphor telemetry screen with scanlines" },
   { name: "dialog", title: "Bolted Dialog", category: "Overlays", desc: "Bolted enclosure with hazard stripes and screws" },
-  { name: "tabs", title: "Ganged Ops Tabs", category: "Navigation", desc: "Interlocked switchbank with active amber LEDs" },
   { name: "popover", title: "BNC Pinout Popover", category: "Overlays", desc: "Bolted pinout tag with telemetry borders" },
   { name: "dropdown-menu", title: "Dropdown Menu", category: "Overlays", desc: "Engraved alloy rows with hotkey indicators" },
   { name: "tooltip", title: "Stencil Tooltip", category: "Overlays", desc: "Micro-lens identification label tags" },
+  { name: "tabs", title: "Ganged Ops Tabs", category: "Navigation", desc: "Interlocked switchbank with active amber LEDs" },
   { name: "breadcrumb", title: "Chevron Breadcrumb", category: "Navigation", desc: "Navigation vector path with glowing active segment" },
   { name: "accordion", title: "Inspection Hatch", category: "Navigation", desc: "Sliding hardware inspection hatch accordion" },
   { name: "card", title: "Chassis Card", category: "Data", desc: "Bolted armor plate cards with hazard accents" },
   { name: "table", title: "Logistics Manifest", category: "Data", desc: "Hardened zebra data table with amber headers" },
   { name: "chart", title: "Dot-Matrix CRT Chart", category: "Data", desc: "Oscilloscope vector paths & FFT spectrum bars" },
   { name: "separator", title: "Hazard Separator", category: "Layout", desc: "Heavy dividers with diagonal hazard stripes" },
+  { name: "chassis-plate", title: "Chassis Armor Plate", category: "Layout", desc: "Cold-rolled structural enclosure plate with hex screws" },
+  { name: "lcd-screen", title: "Phosphor CRT / LCD", category: "Layout", desc: "High-contrast phosphor display with raster scanlines" },
 ];
 
 export default function BrowseComponentsPage() {
@@ -141,7 +148,7 @@ export default function BrowseComponentsPage() {
 
                 <div className="flex items-center justify-between pt-3 border-t border-[var(--mkl-surface-mid)]">
                   <Link
-                    href={`/docs/components/${comp.name === "input" ? "input" : comp.name === "dialog" ? "dialog" : comp.name === "chart" || comp.name === "table" ? "data" : "button"}`}
+                    href={`/docs/components/${comp.name}`}
                     className="font-mono text-xs font-bold text-[var(--mkl-amb)] hover:underline"
                   >
                     VIEW SPECS →
