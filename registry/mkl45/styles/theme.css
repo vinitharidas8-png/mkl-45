@@ -1,0 +1,210 @@
+/* ═══════════════════════════════════════════════════════════
+   MKL-45 INTERCEPTOR UI SYSTEM — Design Token Registry
+   MIL-STD-810H // Hardened Transceiver Interface REV 8.4
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── LIGHT THEME (Default — Sand Canvas Deployment) ─── */
+:root {
+  /* Surfaces */
+  --mkl-bg: #D8CCB6;
+  --mkl-surface: #141312;
+  --mkl-surface-low: #1C1B1A;
+  --mkl-surface-mid: #252422;
+  --mkl-surface-high: #32302D;
+  --mkl-surface-bright: #3A3937;
+
+  /* Steel Alloys */
+  --mkl-steel-1: #A09F9A;
+  --mkl-steel-2: #76756F;
+  --mkl-steel-edge: #B5B4AE;
+  --mkl-steel-base: #8A8984;
+
+  /* Primary Accent — Cerakote Rust Orange */
+  --mkl-acc: #D9712F;
+  --mkl-acc-light: #FF9D5C;
+  --mkl-acc-dark: #8E4417;
+
+  /* Hazard Amber — LEDs, Warnings, Telemetry Only */
+  --mkl-amb: #F2B01E;
+  --mkl-amb-dim: #42310B;
+
+  /* Danger — Emergency / Destructive */
+  --mkl-danger: #D32F2F;
+  --mkl-danger-light: #FF6B6B;
+  --mkl-danger-dark: #7F1D1D;
+
+  /* Success — Lock / Secure */
+  --mkl-emerald: #2E7D32;
+  --mkl-emerald-light: #00E676;
+  --mkl-emerald-dim: #0F381E;
+
+  /* Telemetry Cyan */
+  --mkl-cyan: #0288D1;
+
+  /* LCD / Amber Phosphor Display */
+  --mkl-lcd: #150E00;
+  --mkl-lcd-ink: #FFB000;
+  --mkl-lcd-ghost: #281B00;
+  --mkl-lcd-glow: 0 0 6px rgba(255, 176, 0, 0.65), 0 0 12px rgba(255, 176, 0, 0.3);
+  --mkl-lcd-scanline: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3) 0px,
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+
+  /* Keycap Materials */
+  --mkl-key: #D9D7D0;
+  --mkl-key-shadow: #98968F;
+  --mkl-key-dark: #232220;
+  --mkl-key-dark-shadow: #11100F;
+
+  /* On-surface text */
+  --mkl-on-surface: #E6E2DE;
+  --mkl-on-surface-variant: #DCC1B4;
+  --mkl-outline: #A48C80;
+  --mkl-outline-variant: #564339;
+
+  /* Chamfer / Corner Cut */
+  --mkl-cut-sm: 8px;
+  --mkl-cut: 16px;
+  --mkl-cut-lg: 24px;
+  --mkl-fillet: 4px;
+
+  /* Elevation Shadows */
+  --mkl-shadow-recessed: inset 0 3px 8px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(0, 0, 0, 0.9);
+  --mkl-shadow-flush: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --mkl-shadow-plate: 0 4px 12px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --mkl-shadow-switchgear: 0 8px 24px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);
+  --mkl-shadow-keycap-pbt: 0 4px 0 #98968F, 0 6px 12px rgba(0, 0, 0, 0.45);
+  --mkl-shadow-keycap-charcoal: 0 4px 0 #11100F, 0 6px 12px rgba(0, 0, 0, 0.65);
+  --mkl-shadow-keycap-orange: 0 4px 0 #8E4417, 0 6px 12px rgba(217, 113, 47, 0.35);
+  --mkl-shadow-keycap-red: 0 4px 0 #7F1D1D, 0 6px 12px rgba(211, 47, 47, 0.4);
+  --mkl-shadow-keycap-active: 0 1px 0 rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(0, 0, 0, 0.5);
+
+  /* Motion / Actuation Timings */
+  --mkl-tp: 80ms;
+  --mkl-ts: 300ms;
+  --mkl-ease-actuation: cubic-bezier(0.2, 0, 0, 1);
+  --mkl-ease-settle: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --mkl-lcd-step: steps(8, end);
+
+  /* Spacing Scale (4px base) */
+  --mkl-space-1: 4px;
+  --mkl-space-2: 8px;
+  --mkl-space-3: 12px;
+  --mkl-space-4: 16px;
+  --mkl-space-5: 20px;
+  --mkl-space-6: 24px;
+  --mkl-space-8: 32px;
+  --mkl-space-10: 40px;
+}
+
+/* ─── DARK THEME (Night Vision Deployment) ─── */
+[data-theme="dark"] {
+  --mkl-bg: #0A0908;
+  --mkl-surface: #0E0D0C;
+  --mkl-surface-low: #141312;
+  --mkl-surface-mid: #1C1B1A;
+  --mkl-surface-high: #252422;
+  --mkl-surface-bright: #32302D;
+
+  --mkl-steel-1: #6B6A66;
+  --mkl-steel-2: #4A4945;
+  --mkl-steel-edge: #7A7975;
+  --mkl-steel-base: #5C5B57;
+
+  --mkl-acc: #C4652A;
+  --mkl-acc-light: #E88A4F;
+  --mkl-acc-dark: #7A3A15;
+
+  --mkl-key: #3A3937;
+  --mkl-key-shadow: #1A1918;
+  --mkl-key-dark: #1A1918;
+  --mkl-key-dark-shadow: #0A0908;
+
+  --mkl-on-surface: #C4C0BC;
+  --mkl-on-surface-variant: #A89080;
+
+  --mkl-lcd-glow: 0 0 8px rgba(255, 176, 0, 0.85), 0 0 16px rgba(255, 176, 0, 0.4);
+
+  --mkl-shadow-keycap-pbt: 0 4px 0 #1A1918, 0 6px 12px rgba(0, 0, 0, 0.65);
+  --mkl-shadow-keycap-charcoal: 0 4px 0 #0A0908, 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* ─── UTILITY CLASSES ─── */
+
+/* 45° Chamfered Corners */
+.chamfer-sm {
+  clip-path: polygon(
+    var(--mkl-cut-sm) 0%, calc(100% - var(--mkl-cut-sm)) 0%,
+    100% var(--mkl-cut-sm), 100% calc(100% - var(--mkl-cut-sm)),
+    calc(100% - var(--mkl-cut-sm)) 100%, var(--mkl-cut-sm) 100%,
+    0% calc(100% - var(--mkl-cut-sm)), 0% var(--mkl-cut-sm)
+  );
+}
+
+.chamfer {
+  clip-path: polygon(
+    var(--mkl-cut) 0%, calc(100% - var(--mkl-cut)) 0%,
+    100% var(--mkl-cut), 100% calc(100% - var(--mkl-cut)),
+    calc(100% - var(--mkl-cut)) 100%, var(--mkl-cut) 100%,
+    0% calc(100% - var(--mkl-cut)), 0% var(--mkl-cut)
+  );
+}
+
+.chamfer-lg {
+  clip-path: polygon(
+    var(--mkl-cut-lg) 0%, calc(100% - var(--mkl-cut-lg)) 0%,
+    100% var(--mkl-cut-lg), 100% calc(100% - var(--mkl-cut-lg)),
+    calc(100% - var(--mkl-cut-lg)) 100%, var(--mkl-cut-lg) 100%,
+    0% calc(100% - var(--mkl-cut-lg)), 0% var(--mkl-cut-lg)
+  );
+}
+
+/* Hazard Stripes */
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--mkl-amb) 0,
+    var(--mkl-amb) 10px,
+    var(--mkl-surface) 10px,
+    var(--mkl-surface) 20px
+  );
+}
+
+.hazard-stripes-danger {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--mkl-danger) 0,
+    var(--mkl-danger) 10px,
+    var(--mkl-surface) 10px,
+    var(--mkl-surface) 20px
+  );
+}
+
+/* LCD Screen Base */
+.lcd-screen {
+  background-color: var(--mkl-lcd);
+  background-image: var(--mkl-lcd-scanline);
+  box-shadow: var(--mkl-shadow-recessed);
+  color: var(--mkl-lcd-ink);
+}
+
+/* Phosphor Glow Text */
+.lcd-glow {
+  text-shadow: var(--mkl-lcd-glow);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
