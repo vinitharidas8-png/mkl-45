@@ -1,0 +1,18 @@
+{
+  "name": "table",
+  "type": "registry:ui",
+  "title": "Logistics Manifest Table",
+  "description": "Hardened zebra data table with amber column headers and dense metrology formatting",
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/table.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Table = React.forwardRef<\n  HTMLTableElement,\n  React.HTMLAttributes<HTMLTableElement>\n>(({ className, ...props }, ref) => (\n  <div className=\"relative w-full overflow-auto rounded border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] shadow-[0_8px_24px_rgba(0,0,0,0.5)]\">\n    <table\n      ref={ref}\n      className={cn(\"w-full caption-bottom font-mono text-xs text-left\", className)}\n      {...props}\n    />\n  </div>\n));\nTable.displayName = \"Table\";\n\nexport const TableHeader = React.forwardRef<\n  HTMLTableSectionElement,\n  React.HTMLAttributes<HTMLTableSectionElement>\n>(({ className, ...props }, ref) => (\n  <thead\n    ref={ref}\n    className={cn(\n      \"border-b-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface-low)] font-bold text-[var(--mkl-amb)] uppercase tracking-wider\",\n      className\n    )}\n    {...props}\n  />\n));\nTableHeader.displayName = \"TableHeader\";\n\nexport const TableBody = React.forwardRef<\n  HTMLTableSectionElement,\n  React.HTMLAttributes<HTMLTableSectionElement>\n>(({ className, ...props }, ref) => (\n  <tbody\n    ref={ref}\n    className={cn(\"divide-y divide-[var(--mkl-surface-mid)]\", className)}\n    {...props}\n  />\n));\nTableBody.displayName = \"TableBody\";\n\nexport const TableRow = React.forwardRef<\n  HTMLTableRowElement,\n  React.HTMLAttributes<HTMLTableRowElement>\n>(({ className, ...props }, ref) => (\n  <tr\n    ref={ref}\n    className={cn(\n      \"transition-colors hover:bg-[var(--mkl-surface-high)]/60 even:bg-[var(--mkl-surface-low)]/40\",\n      className\n    )}\n    {...props}\n  />\n));\nTableRow.displayName = \"TableRow\";\n\nexport const TableHead = React.forwardRef<\n  HTMLTableCellElement,\n  React.ThHTMLAttributes<HTMLTableCellElement>\n>(({ className, ...props }, ref) => (\n  <th\n    ref={ref}\n    className={cn(\"h-10 px-3.5 text-left align-middle font-bold text-[11px]\", className)}\n    {...props}\n  />\n));\nTableHead.displayName = \"TableHead\";\n\nexport const TableCell = React.forwardRef<\n  HTMLTableCellElement,\n  React.TdHTMLAttributes<HTMLTableCellElement>\n>(({ className, ...props }, ref) => (\n  <td\n    ref={ref}\n    className={cn(\"p-3.5 align-middle text-[var(--mkl-on-surface)]\", className)}\n    {...props}\n  />\n));\nTableCell.displayName = \"TableCell\";\n",
+      "target": "table.tsx"
+    }
+  ]
+}

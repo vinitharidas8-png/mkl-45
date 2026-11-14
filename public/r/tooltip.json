@@ -1,0 +1,21 @@
+{
+  "name": "tooltip",
+  "type": "registry:ui",
+  "title": "Stencil Tooltip",
+  "description": "Laser-stenciled identification label tag tooltip",
+  "dependencies": [
+    "@radix-ui/react-tooltip"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/tooltip.tsx",
+      "type": "registry:ui",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as TooltipPrimitive from \"@radix-ui/react-tooltip\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const TooltipProvider = TooltipPrimitive.Provider;\nexport const Tooltip = TooltipPrimitive.Root;\nexport const TooltipTrigger = TooltipPrimitive.Trigger;\n\nexport const TooltipContent = React.forwardRef<\n  React.ElementRef<typeof TooltipPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>\n>(({ className, sideOffset = 4, ...props }, ref) => (\n  <TooltipPrimitive.Portal>\n    <TooltipPrimitive.Content\n      ref={ref}\n      sideOffset={sideOffset}\n      className={cn(\n        \"z-50 overflow-hidden rounded-[2px] bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] px-2.5 py-1 text-[11px] font-mono font-bold text-[var(--mkl-amb)] uppercase shadow-[0_4px_12px_rgba(0,0,0,0.6)]\",\n        \"animate-in fade-in-0 zoom-in-95\",\n        className\n      )}\n      {...props}\n    />\n  </TooltipPrimitive.Portal>\n));\nTooltipContent.displayName = TooltipPrimitive.Content.displayName;\n",
+      "target": "tooltip.tsx"
+    }
+  ]
+}

@@ -1,0 +1,564 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "mkl45",
+  "homepage": "https://mkl-45.vercel.app",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:file",
+      "title": "MKL-45 Theme Tokens",
+      "description": "MIL-STD-810H industrial field-radio design tokens: sand beige, steel, cerakote rust orange, hazard amber, and LCD styling",
+      "files": [
+        {
+          "path": "registry/mkl45/styles/theme.css",
+          "type": "registry:file",
+          "content": "/* ═══════════════════════════════════════════════════════════\n   MKL-45 INTERCEPTOR UI SYSTEM — Design Token Registry\n   MIL-STD-810H // Hardened Transceiver Interface REV 8.4\n   ═══════════════════════════════════════════════════════════ */\n\n/* ─── LIGHT THEME (Default — Sand Canvas Deployment) ─── */\n:root {\n  /* Surfaces */\n  --mkl-bg: #D8CCB6;\n  --mkl-surface: #141312;\n  --mkl-surface-low: #1C1B1A;\n  --mkl-surface-mid: #252422;\n  --mkl-surface-high: #32302D;\n  --mkl-surface-bright: #3A3937;\n\n  /* Steel Alloys */\n  --mkl-steel-1: #A09F9A;\n  --mkl-steel-2: #76756F;\n  --mkl-steel-edge: #B5B4AE;\n  --mkl-steel-base: #8A8984;\n\n  /* Primary Accent — Cerakote Rust Orange */\n  --mkl-acc: #D9712F;\n  --mkl-acc-light: #FF9D5C;\n  --mkl-acc-dark: #8E4417;\n\n  /* Hazard Amber — LEDs, Warnings, Telemetry Only */\n  --mkl-amb: #F2B01E;\n  --mkl-amb-dim: #42310B;\n\n  /* Danger — Emergency / Destructive */\n  --mkl-danger: #D32F2F;\n  --mkl-danger-light: #FF6B6B;\n  --mkl-danger-dark: #7F1D1D;\n\n  /* Success — Lock / Secure */\n  --mkl-emerald: #2E7D32;\n  --mkl-emerald-light: #00E676;\n  --mkl-emerald-dim: #0F381E;\n\n  /* Telemetry Cyan */\n  --mkl-cyan: #0288D1;\n\n  /* LCD / Amber Phosphor Display */\n  --mkl-lcd: #150E00;\n  --mkl-lcd-ink: #FFB000;\n  --mkl-lcd-ghost: #281B00;\n  --mkl-lcd-glow: 0 0 6px rgba(255, 176, 0, 0.65), 0 0 12px rgba(255, 176, 0, 0.3);\n  --mkl-lcd-scanline: repeating-linear-gradient(\n    0deg,\n    rgba(0, 0, 0, 0.3) 0px,\n    rgba(0, 0, 0, 0.3) 1px,\n    transparent 1px,\n    transparent 2px\n  );\n\n  /* Keycap Materials */\n  --mkl-key: #D9D7D0;\n  --mkl-key-shadow: #98968F;\n  --mkl-key-dark: #232220;\n  --mkl-key-dark-shadow: #11100F;\n\n  /* On-surface text */\n  --mkl-on-surface: #E6E2DE;\n  --mkl-on-surface-variant: #DCC1B4;\n  --mkl-outline: #A48C80;\n  --mkl-outline-variant: #564339;\n\n  /* Chamfer / Corner Cut */\n  --mkl-cut-sm: 8px;\n  --mkl-cut: 16px;\n  --mkl-cut-lg: 24px;\n  --mkl-fillet: 4px;\n\n  /* Elevation Shadows */\n  --mkl-shadow-recessed: inset 0 3px 8px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(0, 0, 0, 0.9);\n  --mkl-shadow-flush: 0 1px 3px rgba(0, 0, 0, 0.35);\n  --mkl-shadow-plate: 0 4px 12px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);\n  --mkl-shadow-switchgear: 0 8px 24px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);\n  --mkl-shadow-keycap-pbt: 0 4px 0 #98968F, 0 6px 12px rgba(0, 0, 0, 0.45);\n  --mkl-shadow-keycap-charcoal: 0 4px 0 #11100F, 0 6px 12px rgba(0, 0, 0, 0.65);\n  --mkl-shadow-keycap-orange: 0 4px 0 #8E4417, 0 6px 12px rgba(217, 113, 47, 0.35);\n  --mkl-shadow-keycap-red: 0 4px 0 #7F1D1D, 0 6px 12px rgba(211, 47, 47, 0.4);\n  --mkl-shadow-keycap-active: 0 1px 0 rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(0, 0, 0, 0.5);\n\n  /* Motion / Actuation Timings */\n  --mkl-tp: 80ms;\n  --mkl-ts: 300ms;\n  --mkl-ease-actuation: cubic-bezier(0.2, 0, 0, 1);\n  --mkl-ease-settle: cubic-bezier(0.34, 1.56, 0.64, 1);\n  --mkl-lcd-step: steps(8, end);\n\n  /* Spacing Scale (4px base) */\n  --mkl-space-1: 4px;\n  --mkl-space-2: 8px;\n  --mkl-space-3: 12px;\n  --mkl-space-4: 16px;\n  --mkl-space-5: 20px;\n  --mkl-space-6: 24px;\n  --mkl-space-8: 32px;\n  --mkl-space-10: 40px;\n}\n\n/* ─── DARK THEME (Night Vision Deployment) ─── */\n[data-theme=\"dark\"] {\n  --mkl-bg: #0A0908;\n  --mkl-surface: #0E0D0C;\n  --mkl-surface-low: #141312;\n  --mkl-surface-mid: #1C1B1A;\n  --mkl-surface-high: #252422;\n  --mkl-surface-bright: #32302D;\n\n  --mkl-steel-1: #6B6A66;\n  --mkl-steel-2: #4A4945;\n  --mkl-steel-edge: #7A7975;\n  --mkl-steel-base: #5C5B57;\n\n  --mkl-acc: #C4652A;\n  --mkl-acc-light: #E88A4F;\n  --mkl-acc-dark: #7A3A15;\n\n  --mkl-key: #3A3937;\n  --mkl-key-shadow: #1A1918;\n  --mkl-key-dark: #1A1918;\n  --mkl-key-dark-shadow: #0A0908;\n\n  --mkl-on-surface: #C4C0BC;\n  --mkl-on-surface-variant: #A89080;\n\n  --mkl-lcd-glow: 0 0 8px rgba(255, 176, 0, 0.85), 0 0 16px rgba(255, 176, 0, 0.4);\n\n  --mkl-shadow-keycap-pbt: 0 4px 0 #1A1918, 0 6px 12px rgba(0, 0, 0, 0.65);\n  --mkl-shadow-keycap-charcoal: 0 4px 0 #0A0908, 0 6px 12px rgba(0, 0, 0, 0.8);\n}\n\n/* ─── UTILITY CLASSES ─── */\n\n/* 45° Chamfered Corners */\n.chamfer-sm {\n  clip-path: polygon(\n    var(--mkl-cut-sm) 0%, calc(100% - var(--mkl-cut-sm)) 0%,\n    100% var(--mkl-cut-sm), 100% calc(100% - var(--mkl-cut-sm)),\n    calc(100% - var(--mkl-cut-sm)) 100%, var(--mkl-cut-sm) 100%,\n    0% calc(100% - var(--mkl-cut-sm)), 0% var(--mkl-cut-sm)\n  );\n}\n\n.chamfer {\n  clip-path: polygon(\n    var(--mkl-cut) 0%, calc(100% - var(--mkl-cut)) 0%,\n    100% var(--mkl-cut), 100% calc(100% - var(--mkl-cut)),\n    calc(100% - var(--mkl-cut)) 100%, var(--mkl-cut) 100%,\n    0% calc(100% - var(--mkl-cut)), 0% var(--mkl-cut)\n  );\n}\n\n.chamfer-lg {\n  clip-path: polygon(\n    var(--mkl-cut-lg) 0%, calc(100% - var(--mkl-cut-lg)) 0%,\n    100% var(--mkl-cut-lg), 100% calc(100% - var(--mkl-cut-lg)),\n    calc(100% - var(--mkl-cut-lg)) 100%, var(--mkl-cut-lg) 100%,\n    0% calc(100% - var(--mkl-cut-lg)), 0% var(--mkl-cut-lg)\n  );\n}\n\n/* Hazard Stripes */\n.hazard-stripes {\n  background: repeating-linear-gradient(\n    -45deg,\n    var(--mkl-amb) 0,\n    var(--mkl-amb) 10px,\n    var(--mkl-surface) 10px,\n    var(--mkl-surface) 20px\n  );\n}\n\n.hazard-stripes-danger {\n  background: repeating-linear-gradient(\n    -45deg,\n    var(--mkl-danger) 0,\n    var(--mkl-danger) 10px,\n    var(--mkl-surface) 10px,\n    var(--mkl-surface) 20px\n  );\n}\n\n/* LCD Screen Base */\n.lcd-screen {\n  background-color: var(--mkl-lcd);\n  background-image: var(--mkl-lcd-scanline);\n  box-shadow: var(--mkl-shadow-recessed);\n  color: var(--mkl-lcd-ink);\n}\n\n/* Phosphor Glow Text */\n.lcd-glow {\n  text-shadow: var(--mkl-lcd-glow);\n}\n\n/* Reduced Motion */\n@media (prefers-reduced-motion: reduce) {\n  *,\n  *::before,\n  *::after {\n    animation-duration: 0.01ms !important;\n    animation-iteration-count: 1 !important;\n    transition-duration: 0.01ms !important;\n    scroll-behavior: auto !important;\n  }\n}\n",
+          "target": "theme.css"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utilities",
+      "description": "cn() utility helper for merging class names",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/lib/utils.ts",
+          "type": "registry:lib",
+          "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+          "target": "utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button Keycap",
+      "description": "Tactile mechanical keycap button with 7 finish variants, 4 sizes, status LED jewel, and 80ms down-stroke travel",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/button.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const buttonVariants = cva(\n  [\n    \"relative inline-flex items-center justify-center select-none font-sans tracking-wider uppercase font-bold\",\n    \"transition-all duration-80 ease-[cubic-bezier(0.2,0,0,1)]\",\n    \"focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mkl-amb)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--mkl-surface)]\",\n    \"disabled:pointer-events-none disabled:opacity-40 disabled:grayscale\",\n    \"active:translate-y-[3px]\",\n  ],\n  {\n    variants: {\n      variant: {\n        // 01 Off-white PBT Keycap (Default)\n        default: [\n          \"bg-[var(--mkl-key)] text-[var(--mkl-surface)] font-black\",\n          \"border-t border-l border-white/60 border-r border-b border-[var(--mkl-key-shadow)]\",\n          \"shadow-[0_4px_0_var(--mkl-key-shadow),0_6px_12px_rgba(0,0,0,0.45)] hover:brightness-105\",\n          \"active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]\",\n        ],\n        // 02 Charcoal Tactical Keycap\n        secondary: [\n          \"bg-[var(--mkl-key-dark)] text-[var(--mkl-steel-1)] font-bold\",\n          \"border-t border-l border-[#3E3C38] border-r border-b border-black\",\n          \"shadow-[0_4px_0_var(--mkl-key-dark-shadow),0_6px_12px_rgba(0,0,0,0.65)] hover:text-white hover:brightness-110\",\n          \"active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]\",\n        ],\n        // 03 Cerakote Rust Orange (Primary Command)\n        primary: [\n          \"bg-[var(--mkl-acc)] text-white font-extrabold\",\n          \"border-t border-l border-[var(--mkl-acc-light)] border-r border-b border-[var(--mkl-acc-dark)]\",\n          \"shadow-[0_4px_0_var(--mkl-acc-dark),0_6px_12px_rgba(217,113,47,0.35)] hover:brightness-110\",\n          \"active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]\",\n        ],\n        // 04 Zero-Purge Emergency Red\n        destructive: [\n          \"bg-[var(--mkl-danger)] text-white font-black\",\n          \"border-t border-l border-[var(--mkl-danger-light)] border-r border-b border-[var(--mkl-danger-dark)]\",\n          \"shadow-[0_4px_0_var(--mkl-danger-dark),0_6px_12px_rgba(211,47,47,0.4)] hover:brightness-110\",\n          \"active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]\",\n        ],\n        // 05 Recessed Tray Bezel (Flush Key)\n        outline: [\n          \"bg-[var(--mkl-surface-low)] text-[var(--mkl-amb)] font-mono font-medium\",\n          \"border border-[var(--mkl-surface-mid)] shadow-[inset_0_3px_8px_rgba(0,0,0,0.8),inset_0_1px_2px_rgba(0,0,0,0.95)]\",\n          \"hover:bg-[var(--mkl-surface-mid)]\",\n          \"active:translate-y-0 active:bg-[var(--mkl-surface-high)]\",\n        ],\n        // 06 Tactical Stencil Ghost\n        ghost: [\n          \"bg-transparent text-[var(--mkl-steel-1)] border border-[var(--mkl-steel-2)]/40\",\n          \"hover:bg-[var(--mkl-surface-high)]/40 hover:text-white\",\n          \"active:translate-y-[1px]\",\n        ],\n        // 07 Link / Reticle Link\n        link: [\n          \"bg-transparent text-[var(--mkl-acc)] underline-offset-4 hover:underline font-mono lowercase tracking-normal\",\n          \"active:translate-y-0\",\n        ],\n      },\n      size: {\n        sm: \"h-8 px-2.5 text-xs rounded-[3px] gap-1.5\",\n        default: \"h-11 px-4 text-sm rounded-[4px] gap-2\",\n        lg: \"h-14 px-6 text-base rounded-[6px] gap-3 tracking-widest\",\n        icon: \"h-11 w-11 p-0 rounded-[4px]\",\n      },\n      isLatched: {\n        true: \"translate-y-[3px] shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)] ring-1 ring-[var(--mkl-amb)]/60\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n      isLatched: false,\n    },\n  }\n);\n\nexport interface ButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof buttonVariants> {\n  sublabel?: string;\n  hasLed?: boolean;\n  isLedActive?: boolean;\n  ledColor?: \"amber\" | \"emerald\" | \"red\";\n  isLoading?: boolean;\n}\n\nexport const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  (\n    {\n      className,\n      variant,\n      size,\n      sublabel,\n      hasLed = false,\n      isLedActive = false,\n      ledColor = \"amber\",\n      isLatched = false,\n      isLoading = false,\n      children,\n      disabled,\n      ...props\n    },\n    ref\n  ) => {\n    const ledColorClasses = {\n      amber: isLedActive\n        ? \"bg-[var(--mkl-amb)] shadow-[0_0_8px_#F2B01E,0_0_2px_#FFF]\"\n        : \"bg-[var(--mkl-amb-dim)]\",\n      emerald: isLedActive\n        ? \"bg-[var(--mkl-emerald-light)] shadow-[0_0_8px_#00E676,0_0_2px_#FFF]\"\n        : \"bg-[var(--mkl-emerald-dim)]\",\n      red: isLedActive\n        ? \"bg-[#FF1744] shadow-[0_0_8px_#FF1744,0_0_2px_#FFF]\"\n        : \"bg-[#400E0E]\",\n    };\n\n    return (\n      <button\n        ref={ref}\n        disabled={disabled || isLoading}\n        className={cn(buttonVariants({ variant, size, isLatched, className }))}\n        {...props}\n      >\n        {/* Concave keycap top glare overlay */}\n        {variant !== \"link\" && variant !== \"ghost\" && (\n          <span\n            className=\"pointer-events-none absolute inset-x-1 top-0.5 h-1/3 rounded-t-sm bg-gradient-to-b from-white/20 to-transparent\"\n            aria-hidden=\"true\"\n          />\n        )}\n\n        {/* Optional Bi-Stable Status LED Jewel */}\n        {hasLed && (\n          <span\n            className={cn(\n              \"absolute top-1.5 right-1.5 h-2 w-2 rounded-full border border-black/80 transition-colors duration-200\",\n              ledColorClasses[ledColor]\n            )}\n            aria-hidden=\"true\"\n          />\n        )}\n\n        {/* Loading Spinner */}\n        {isLoading ? (\n          <span className=\"flex items-center gap-2\">\n            <svg\n              className=\"h-4 w-4 animate-spin text-current\"\n              xmlns=\"http://www.w3.org/2000/svg\"\n              fill=\"none\"\n              viewBox=\"0 0 24 24\"\n            >\n              <circle\n                className=\"opacity-25\"\n                cx=\"12\"\n                cy=\"12\"\n                r=\"10\"\n                stroke=\"currentColor\"\n                strokeWidth=\"4\"\n              />\n              <path\n                className=\"opacity-75\"\n                fill=\"currentColor\"\n                d=\"M4 12a8 8 0 018-8v8H4z\"\n              />\n            </svg>\n            <span className=\"font-mono text-xs\">BUSY</span>\n          </span>\n        ) : (\n          <span className=\"flex flex-col items-center justify-center leading-none\">\n            {children}\n            {sublabel && (\n              <span className=\"mt-1 font-mono text-[9px] font-normal opacity-70 tracking-normal\">\n                {sublabel}\n              </span>\n            )}\n          </span>\n        )}\n      </button>\n    );\n  }\n);\n\nButton.displayName = \"Button\";\n",
+          "target": "button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd Tag",
+      "description": "Miniature double-shot mechanical keycap legend tag for hotkey cues",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/kbd.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface KbdProps extends React.HTMLAttributes<HTMLElement> {}\n\nexport const Kbd = React.forwardRef<HTMLElement, KbdProps>(\n  ({ className, children, ...props }, ref) => {\n    return (\n      <kbd\n        ref={ref}\n        className={cn(\n          \"inline-flex items-center justify-center h-5 min-w-[20px] px-1.5 text-[10px] font-mono font-bold uppercase rounded-[2px]\",\n          \"bg-[var(--mkl-key-dark)] text-[var(--mkl-key)] border-t border-l border-[var(--mkl-surface-high)] border-r border-b border-black\",\n          \"shadow-[0_2px_0_#0F0E0C] select-none\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </kbd>\n    );\n  }\n);\n\nKbd.displayName = \"Kbd\";\n",
+          "target": "kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chassis-plate",
+      "type": "registry:ui",
+      "title": "Chassis Plate",
+      "description": "Cut-corner armored metal equipment plate with hex corner fasteners and engraved serial tag",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/chassis-plate.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface HexScrewProps extends React.HTMLAttributes<HTMLDivElement> {\n  size?: \"sm\" | \"default\" | \"lg\";\n}\n\nexport const HexScrew: React.FC<HexScrewProps> = ({\n  className,\n  size = \"default\",\n  ...props\n}) => {\n  const sizeClasses = {\n    sm: \"w-2.5 h-2.5\",\n    default: \"w-3 h-3\",\n    lg: \"w-4 h-4\",\n  };\n\n  const innerSize = {\n    sm: \"w-1 h-1\",\n    default: \"w-1.5 h-1.5\",\n    lg: \"w-2 h-2\",\n  };\n\n  return (\n    <div\n      className={cn(\n        \"rounded-full bg-[var(--mkl-surface-bright)] flex items-center justify-center shadow-[inset_0_1px_2px_#000,0_1px_1px_rgba(255,255,255,0.15)]\",\n        sizeClasses[size],\n        className\n      )}\n      aria-hidden=\"true\"\n      {...props}\n    >\n      <div\n        className={cn(\n          \"bg-[var(--mkl-surface-low)] rotate-45 border-[0.5px] border-black/60\",\n          innerSize[size]\n        )}\n      />\n    </div>\n  );\n};\n\nexport interface ChassisPlateProps extends React.HTMLAttributes<HTMLDivElement> {\n  title?: string;\n  serial?: string;\n  spec?: string;\n  hasScrews?: boolean;\n  chamfer?: \"none\" | \"sm\" | \"default\" | \"lg\";\n}\n\nexport const ChassisPlate = React.forwardRef<HTMLDivElement, ChassisPlateProps>(\n  (\n    {\n      className,\n      title,\n      serial,\n      spec,\n      hasScrews = true,\n      chamfer = \"none\",\n      children,\n      ...props\n    },\n    ref\n  ) => {\n    const chamferClass =\n      chamfer === \"sm\"\n        ? \"chamfer-sm\"\n        : chamfer === \"default\"\n        ? \"chamfer\"\n        : chamfer === \"lg\"\n        ? \"chamfer-lg\"\n        : \"rounded-lg\";\n\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"relative bg-[var(--mkl-surface)] border border-[var(--mkl-surface-high)] shadow-[0_12px_28px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.08)] p-5\",\n          chamferClass,\n          className\n        )}\n        {...props}\n      >\n        {hasScrews && (\n          <>\n            <HexScrew className=\"absolute top-2.5 left-2.5\" />\n            <HexScrew className=\"absolute top-2.5 right-2.5\" />\n            <HexScrew className=\"absolute bottom-2.5 left-2.5\" />\n            <HexScrew className=\"absolute bottom-2.5 right-2.5\" />\n          </>\n        )}\n\n        {(title || serial || spec) && (\n          <div className=\"flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-[var(--mkl-surface-mid)] font-mono text-xs\">\n            <div className=\"flex items-center gap-2\">\n              <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)]\" />\n              {title && (\n                <span className=\"font-bold uppercase tracking-wider text-[var(--mkl-on-surface)]\">\n                  {title}\n                </span>\n              )}\n              {spec && (\n                <span className=\"text-[var(--mkl-on-surface-variant)] opacity-75\">\n                  // {spec}\n                </span>\n              )}\n            </div>\n            {serial && (\n              <span className=\"px-2 py-0.5 rounded bg-[var(--mkl-surface-low)] text-[var(--mkl-amb)] shadow-[inset_0_1px_2px_#000] text-[10px]\">\n                [{serial}]\n              </span>\n            )}\n          </div>\n        )}\n\n        {children}\n      </div>\n    );\n  }\n);\n\nChassisPlate.displayName = \"ChassisPlate\";\n",
+          "target": "chassis-plate.tsx"
+        }
+      ]
+    },
+    {
+      "name": "lcd-screen",
+      "type": "registry:ui",
+      "title": "LCD Screen",
+      "description": "Amber dot-matrix CRT/LCD display well with scanlines, bezel recess, and phosphor glow",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/lcd-screen.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface LCDScreenProps extends React.HTMLAttributes<HTMLDivElement> {\n  scanlines?: boolean;\n  glow?: boolean;\n}\n\nexport const LCDScreen = React.forwardRef<HTMLDivElement, LCDScreenProps>(\n  ({ className, scanlines = true, glow = true, children, ...props }, ref) => {\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"relative bg-[var(--mkl-lcd)] text-[var(--mkl-lcd-ink)] font-mono p-3 rounded border border-black/80\",\n          \"shadow-[inset_0_3px_8px_rgba(0,0,0,0.9),inset_0_1px_2px_#000]\",\n          scanlines && \"lcd-screen\",\n          glow && \"lcd-glow\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </div>\n    );\n  }\n);\n\nLCDScreen.displayName = \"LCDScreen\";\n",
+          "target": "lcd-screen.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input Terminal",
+      "description": "Recessed amber dot-matrix CRT data entry terminal with scanlines and phosphor glow",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/input.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface InputProps\n  extends React.InputHTMLAttributes<HTMLInputElement> {\n  error?: boolean;\n}\n\nexport const Input = React.forwardRef<HTMLInputElement, InputProps>(\n  ({ className, type, error, ...props }, ref) => {\n    return (\n      <div className=\"relative w-full\">\n        <input\n          type={type}\n          ref={ref}\n          className={cn(\n            \"w-full h-11 px-3.5 rounded-[3px] font-mono text-xs text-[var(--mkl-lcd-ink)] select-text\",\n            \"bg-[var(--mkl-lcd)] border border-black/80 shadow-[inset_0_3px_8px_rgba(0,0,0,0.9),inset_0_1px_2px_#000]\",\n            \"placeholder:text-[var(--mkl-lcd-ghost)] placeholder:font-mono\",\n            \"focus:outline-none focus:border-[var(--mkl-amb)] focus:ring-1 focus:ring-[var(--mkl-amb)] focus:shadow-[inset_0_2px_6px_#000,0_0_8px_rgba(242,176,30,0.3)]\",\n            \"disabled:opacity-40 disabled:cursor-not-allowed\",\n            \"transition-all duration-80\",\n            error &&\n              \"border-[var(--mkl-danger)] text-[var(--mkl-danger-light)] focus:border-[var(--mkl-danger)] focus:ring-[var(--mkl-danger)] focus:shadow-[0_0_8px_rgba(211,47,47,0.4)]\",\n            className\n          )}\n          {...props}\n        />\n        {/* Subtle scanline overlay */}\n        <span\n          className=\"pointer-events-none absolute inset-0 rounded-[3px] opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.4)_0px,rgba(0,0,0,0.4)_1px,transparent_1px,transparent_2px)]\"\n          aria-hidden=\"true\"\n        />\n      </div>\n    );\n  }\n);\n\nInput.displayName = \"Input\";\n",
+          "target": "input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea Screen",
+      "description": "Large recessed amber phosphor teletype screen for multiline input feeds",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/textarea.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface TextareaProps\n  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {\n  error?: boolean;\n}\n\nexport const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(\n  ({ className, error, ...props }, ref) => {\n    return (\n      <div className=\"relative w-full\">\n        <textarea\n          ref={ref}\n          className={cn(\n            \"w-full min-h-[100px] p-3.5 rounded-[3px] font-mono text-xs text-[var(--mkl-lcd-ink)] select-text\",\n            \"bg-[var(--mkl-lcd)] border border-black/80 shadow-[inset_0_3px_8px_rgba(0,0,0,0.9),inset_0_1px_2px_#000]\",\n            \"placeholder:text-[var(--mkl-lcd-ghost)] placeholder:font-mono\",\n            \"focus:outline-none focus:border-[var(--mkl-amb)] focus:ring-1 focus:ring-[var(--mkl-amb)] focus:shadow-[inset_0_2px_6px_#000,0_0_8px_rgba(242,176,30,0.3)]\",\n            \"disabled:opacity-40 disabled:cursor-not-allowed resize-y\",\n            \"transition-all duration-80\",\n            error &&\n              \"border-[var(--mkl-danger)] text-[var(--mkl-danger-light)] focus:border-[var(--mkl-danger)] focus:ring-[var(--mkl-danger)]\",\n            className\n          )}\n          {...props}\n        />\n        <span\n          className=\"pointer-events-none absolute inset-0 rounded-[3px] opacity-40 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.4)_0px,rgba(0,0,0,0.4)_1px,transparent_1px,transparent_2px)]\"\n          aria-hidden=\"true\"\n        />\n      </div>\n    );\n  }\n);\n\nTextarea.displayName = \"Textarea\";\n",
+          "target": "textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label Stencil",
+      "description": "Laser-etched metal label plate with serial notation",
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/label.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport * as LabelPrimitive from \"@radix-ui/react-label\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface LabelProps\n  extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {\n  serial?: string;\n}\n\nexport const Label = React.forwardRef<\n  React.ElementRef<typeof LabelPrimitive.Root>,\n  LabelProps\n>(({ className, serial, children, ...props }, ref) => {\n  return (\n    <div className=\"flex items-center justify-between mb-1.5 font-mono\">\n      <LabelPrimitive.Root\n        ref={ref}\n        className={cn(\n          \"text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)] select-none cursor-pointer\",\n          \"peer-disabled:cursor-not-allowed peer-disabled:opacity-70\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </LabelPrimitive.Root>\n      {serial && (\n        <span className=\"text-[10px] text-[var(--mkl-steel-1)] opacity-70\">\n          [{serial}]\n        </span>\n      )}\n    </div>\n  );\n});\n\nLabel.displayName = \"Label\";\n",
+          "target": "label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox Stud",
+      "description": "Square latching key switch with recessed amber LED indication",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport * as CheckboxPrimitive from \"@radix-ui/react-checkbox\";\nimport { Check } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface CheckboxProps\n  extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {\n  label?: string;\n  sublabel?: string;\n}\n\nexport const Checkbox = React.forwardRef<\n  React.ElementRef<typeof CheckboxPrimitive.Root>,\n  CheckboxProps\n>(({ className, label, sublabel, ...props }, ref) => {\n  return (\n    <div className=\"inline-flex items-start gap-2.5 select-none\">\n      <CheckboxPrimitive.Root\n        ref={ref}\n        className={cn(\n          \"peer relative h-5 w-5 shrink-0 rounded-[3px] transition-all duration-80 mt-0.5\",\n          \"bg-[var(--mkl-surface-low)] border border-[var(--mkl-surface-high)]\",\n          \"shadow-[inset_0_2px_4px_#000,0_1px_0_rgba(255,255,255,0.05)]\",\n          \"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mkl-amb)] focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--mkl-surface)]\",\n          \"disabled:cursor-not-allowed disabled:opacity-40\",\n          \"data-[state=checked]:bg-[var(--mkl-surface-high)] data-[state=checked]:border-[var(--mkl-amb)] data-[state=checked]:shadow-[0_0_8px_rgba(242,176,30,0.35)]\",\n          className\n        )}\n        {...props}\n      >\n        <CheckboxPrimitive.Indicator className=\"flex items-center justify-center text-[var(--mkl-amb)]\">\n          <Check className=\"h-3.5 w-3.5 stroke-[3]\" />\n        </CheckboxPrimitive.Indicator>\n      </CheckboxPrimitive.Root>\n\n      {(label || sublabel) && (\n        <div className=\"flex flex-col leading-tight\">\n          {label && (\n            <span className=\"font-mono text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)]\">\n              {label}\n            </span>\n          )}\n          {sublabel && (\n            <span className=\"font-mono text-[10px] text-[var(--mkl-steel-1)]\">\n              {sublabel}\n            </span>\n          )}\n        </div>\n      )}\n    </div>\n  );\n});\n\nCheckbox.displayName = \"Checkbox\";\n",
+          "target": "checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Toggle Lever Switch",
+      "description": "Heavy physical toggle lever with overshoot spring physics",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/switch.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport * as SwitchPrimitive from \"@radix-ui/react-switch\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface SwitchProps\n  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> {\n  label?: string;\n  sublabel?: string;\n}\n\nexport const Switch = React.forwardRef<\n  React.ElementRef<typeof SwitchPrimitive.Root>,\n  SwitchProps\n>(({ className, label, sublabel, ...props }, ref) => {\n  return (\n    <div className=\"inline-flex items-center gap-3 select-none\">\n      <SwitchPrimitive.Root\n        ref={ref}\n        className={cn(\n          \"peer inline-flex h-6 w-12 shrink-0 cursor-pointer items-center rounded-full transition-colors duration-200\",\n          \"bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] shadow-[inset_0_2px_5px_#000]\",\n          \"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mkl-amb)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--mkl-surface)]\",\n          \"disabled:cursor-not-allowed disabled:opacity-40\",\n          \"data-[state=checked]:bg-[var(--mkl-surface-high)] data-[state=checked]:border-[var(--mkl-amb)]/60\",\n          className\n        )}\n        {...props}\n      >\n        <SwitchPrimitive.Thumb\n          className={cn(\n            \"pointer-events-none block h-5 w-5 rounded-full transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]\",\n            \"bg-[var(--mkl-steel-1)] border border-white/40 shadow-[0_2px_4px_rgba(0,0,0,0.6)]\",\n            \"data-[state=checked]:translate-x-6 data-[state=checked]:bg-[var(--mkl-acc)] data-[state=checked]:shadow-[0_0_8px_var(--mkl-acc)]\",\n            \"data-[state=unchecked]:translate-x-0.5\"\n          )}\n        />\n      </SwitchPrimitive.Root>\n\n      {(label || sublabel) && (\n        <div className=\"flex flex-col leading-tight\">\n          {label && (\n            <span className=\"font-mono text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)]\">\n              {label}\n            </span>\n          )}\n          {sublabel && (\n            <span className=\"font-mono text-[10px] text-[var(--mkl-steel-1)]\">\n              {sublabel}\n            </span>\n          )}\n        </div>\n      )}\n    </div>\n  );\n});\n\nSwitch.displayName = \"Switch\";\n",
+          "target": "switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Linear Fader Slider",
+      "description": "Horizontal attenuation fader with knurled thumb and analog ruler tick markings",
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/slider.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport * as SliderPrimitive from \"@radix-ui/react-slider\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface SliderProps\n  extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {\n  ticks?: boolean;\n}\n\nexport const Slider = React.forwardRef<\n  React.ElementRef<typeof SliderPrimitive.Root>,\n  SliderProps\n>(({ className, ticks = true, ...props }, ref) => {\n  return (\n    <div className=\"relative w-full py-2\">\n      <SliderPrimitive.Root\n        ref={ref}\n        className={cn(\n          \"relative flex w-full touch-none select-none items-center\",\n          className\n        )}\n        {...props}\n      >\n        <SliderPrimitive.Track className=\"relative h-2.5 w-full grow overflow-hidden rounded-sm bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] shadow-[inset_0_2px_4px_#000]\">\n          <SliderPrimitive.Range className=\"absolute h-full bg-[var(--mkl-acc)] shadow-[0_0_6px_var(--mkl-acc)]\" />\n        </SliderPrimitive.Track>\n        <SliderPrimitive.Thumb className=\"block h-6 w-3.5 rounded-[2px] bg-[var(--mkl-key)] border border-[var(--mkl-steel-edge)] shadow-[0_3px_6px_rgba(0,0,0,0.6)] transition-transform duration-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mkl-amb)] active:scale-110 cursor-grab active:cursor-grabbing\" />\n      </SliderPrimitive.Root>\n\n      {/* Analog ruler tick marks underneath */}\n      {ticks && (\n        <div className=\"flex justify-between px-1.5 mt-2 font-mono text-[9px] text-[var(--mkl-steel-2)] select-none\">\n          <span>0</span>\n          <span>25</span>\n          <span>50</span>\n          <span>75</span>\n          <span>100</span>\n        </div>\n      )}\n    </div>\n  );\n});\n\nSlider.displayName = \"Slider\";\n",
+          "target": "slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "rotary-knob",
+      "type": "registry:ui",
+      "title": "Rotary Attenuator Knob",
+      "description": "Rotational knurled aluminum potentiometer with 270-degree sweep and LCD readout",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/rotary-knob.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface RotaryKnobProps {\n  value?: number;\n  min?: number;\n  max?: number;\n  step?: number;\n  onChange?: (val: number) => void;\n  label?: string;\n  serial?: string;\n  className?: string;\n}\n\nexport function RotaryKnob({\n  value = 50,\n  min = 0,\n  max = 100,\n  step = 1,\n  onChange,\n  label,\n  serial = \"ATTN-01\",\n  className,\n}: RotaryKnobProps) {\n  const [internalVal, setInternalVal] = React.useState(value);\n  const knobRef = React.useRef<HTMLDivElement>(null);\n  const isDragging = React.useRef(false);\n  const startY = React.useRef(0);\n  const startVal = React.useRef(value);\n\n  const currentVal = value !== undefined ? value : internalVal;\n  // Map value to angle (-135deg to +135deg = 270deg sweep)\n  const percent = (currentVal - min) / (max - min);\n  const angle = -135 + percent * 270;\n\n  const handleMouseDown = (e: React.MouseEvent) => {\n    isDragging.current = true;\n    startY.current = e.clientY;\n    startVal.current = currentVal;\n    document.addEventListener(\"mousemove\", handleMouseMove);\n    document.addEventListener(\"mouseup\", handleMouseUp);\n  };\n\n  const handleMouseMove = (e: MouseEvent) => {\n    if (!isDragging.current) return;\n    const deltaY = startY.current - e.clientY;\n    const range = max - min;\n    const change = (deltaY / 150) * range;\n    let nextVal = Math.round((startVal.current + change) / step) * step;\n    nextVal = Math.max(min, Math.min(max, nextVal));\n    setInternalVal(nextVal);\n    onChange?.(nextVal);\n  };\n\n  const handleMouseUp = () => {\n    isDragging.current = false;\n    document.removeEventListener(\"mousemove\", handleMouseMove);\n    document.removeEventListener(\"mouseup\", handleMouseUp);\n  };\n\n  return (\n    <div\n      className={cn(\n        \"inline-flex flex-col items-center p-3 rounded bg-[var(--mkl-surface)] border border-[var(--mkl-surface-high)] shadow-[0_6px_16px_rgba(0,0,0,0.5)] select-none\",\n        className\n      )}\n    >\n      {(label || serial) && (\n        <div className=\"flex items-center justify-between w-full pb-2 mb-2 border-b border-[var(--mkl-surface-mid)] font-mono text-[10px]\">\n          {label && (\n            <span className=\"font-bold uppercase text-[var(--mkl-on-surface)]\">\n              {label}\n            </span>\n          )}\n          {serial && (\n            <span className=\"text-[var(--mkl-steel-1)]\">[{serial}]</span>\n          )}\n        </div>\n      )}\n\n      {/* Physical knurled aluminum knob body */}\n      <div\n        ref={knobRef}\n        onMouseDown={handleMouseDown}\n        className=\"relative w-16 h-16 rounded-full cursor-ns-resize flex items-center justify-center bg-gradient-to-br from-[var(--mkl-steel-1)] to-[var(--mkl-steel-2)] border-2 border-[var(--mkl-steel-edge)] shadow-[0_4px_12px_rgba(0,0,0,0.6),inset_0_2px_4px_rgba(255,255,255,0.4)]\"\n      >\n        {/* Knurled outer rim texture */}\n        <div className=\"absolute inset-1 rounded-full border border-black/40 bg-[var(--mkl-surface)] shadow-[inset_0_2px_6px_#000]\" />\n\n        {/* Center rotating core with indicator notch */}\n        <div\n          className=\"relative w-10 h-10 rounded-full bg-gradient-to-br from-[#2E2D2B] to-[#1A1918] flex items-center justify-center transition-transform duration-75\"\n          style={{ transform: `rotate(${angle}deg)` }}\n        >\n          {/* High-visibility amber indicator notch */}\n          <span className=\"absolute top-1 w-1 h-3 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)]\" />\n        </div>\n      </div>\n\n      {/* Telemetry LCD readout under knob */}\n      <div className=\"mt-3 px-2 py-0.5 rounded bg-[var(--mkl-lcd)] border border-black/80 font-mono text-[11px] text-[var(--mkl-lcd-ink)] lcd-glow shadow-[inset_0_1px_3px_#000]\">\n        VAL: {currentVal.toFixed(0)}\n      </div>\n    </div>\n  );\n}\n",
+          "target": "rotary-knob.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert Plate",
+      "description": "Cut-corner tactical alert plate with hazard-striped edge trims and system serials",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/alert.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { AlertCircle, AlertTriangle, Info, CheckCircle2 } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const alertVariants = cva(\n  \"relative w-full rounded-md border p-4 shadow-[0_8px_20px_rgba(0,0,0,0.5)] font-mono text-xs overflow-hidden\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-[var(--mkl-surface)] border-[var(--mkl-surface-high)] text-[var(--mkl-on-surface)]\",\n        warning:\n          \"bg-[var(--mkl-surface-low)] border-[var(--mkl-amb)]/60 text-[var(--mkl-on-surface)]\",\n        destructive:\n          \"bg-[var(--mkl-surface-low)] border-[var(--mkl-danger)]/80 text-[var(--mkl-on-surface)]\",\n        success:\n          \"bg-[var(--mkl-surface-low)] border-[var(--mkl-emerald)]/80 text-[var(--mkl-on-surface)]\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nexport interface AlertProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof alertVariants> {\n  title?: string;\n  code?: string;\n}\n\nexport function Alert({\n  className,\n  variant = \"default\",\n  title,\n  code,\n  children,\n  ...props\n}: AlertProps) {\n  const iconMap = {\n    default: <Info className=\"w-4 h-4 text-[var(--mkl-steel-1)]\" />,\n    warning: <AlertTriangle className=\"w-4 h-4 text-[var(--mkl-amb)]\" />,\n    destructive: <AlertCircle className=\"w-4 h-4 text-[var(--mkl-danger)]\" />,\n    success: <CheckCircle2 className=\"w-4 h-4 text-[var(--mkl-emerald)]\" />,\n  };\n\n  const isWarningOrDanger = variant === \"warning\" || variant === \"destructive\";\n\n  return (\n    <div className={cn(alertVariants({ variant, className }))} {...props}>\n      {/* Tactical Hazard Edge Stripe */}\n      {isWarningOrDanger && (\n        <div\n          className={cn(\n            \"absolute left-0 top-0 bottom-0 w-2\",\n            variant === \"destructive\" ? \"hazard-stripes-danger\" : \"hazard-stripes\"\n          )}\n        />\n      )}\n\n      <div className={cn(\"flex items-start gap-3\", isWarningOrDanger && \"pl-2\")}>\n        <div className=\"mt-0.5 shrink-0\">{iconMap[variant || \"default\"]}</div>\n        <div className=\"flex-1 space-y-1\">\n          {(title || code) && (\n            <div className=\"flex items-center justify-between font-bold uppercase tracking-wider\">\n              {title && <span>{title}</span>}\n              {code && (\n                <span className=\"text-[10px] text-[var(--mkl-steel-1)]\">\n                  [{code}]\n                </span>\n              )}\n            </div>\n          )}\n          <div className=\"text-[var(--mkl-steel-1)] leading-relaxed\">\n            {children}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+          "target": "alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Chevron Progress Bar",
+      "description": "12-segment illuminated amber phosphor chevron level meter",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/progress.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {\n  value?: number;\n  max?: number;\n  segments?: number;\n}\n\nexport function Progress({\n  className,\n  value = 50,\n  max = 100,\n  segments = 12,\n  ...props\n}: ProgressProps) {\n  const percentage = Math.min(100, Math.max(0, (value / max) * 100));\n  const activeSegments = Math.round((percentage / 100) * segments);\n\n  return (\n    <div className={cn(\"w-full space-y-1.5 font-mono\", className)} {...props}>\n      {/* 12-Segment Hardened Chevron Bar */}\n      <div className=\"flex items-center gap-1 p-1 rounded bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] shadow-[inset_0_2px_4px_#000]\">\n        {Array.from({ length: segments }).map((_, i) => {\n          const isLit = i < activeSegments;\n          return (\n            <div\n              key={i}\n              className={cn(\n                \"h-4 flex-1 rounded-[1px] transition-all duration-100\",\n                isLit\n                  ? \"bg-[var(--mkl-amb)] shadow-[0_0_8px_var(--mkl-amb),inset_0_1px_1px_#FFF]\"\n                  : \"bg-[var(--mkl-amb-dim)]/40 border border-black/40\"\n              )}\n            />\n          );\n        })}\n      </div>\n\n      <div className=\"flex items-center justify-between text-[10px] text-[var(--mkl-steel-1)] px-0.5\">\n        <span>BUFFER LEVEL</span>\n        <span className=\"text-[var(--mkl-amb)] font-bold\">{Math.round(percentage)}%</span>\n      </div>\n    </div>\n  );\n}\n",
+          "target": "progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "CNC Spinner Loader",
+      "description": "Industrial loaders: CNC gear, dotted amber ring, and tri-state bouncing LEDs",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/spinner.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Settings } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const spinnerVariants = cva(\"animate-spin text-[var(--mkl-amb)]\", {\n  variants: {\n    size: {\n      sm: \"h-4 w-4\",\n      default: \"h-6 w-6\",\n      lg: \"h-8 w-8\",\n    },\n  },\n  defaultVariants: {\n    size: \"default\",\n  },\n});\n\nexport interface SpinnerProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof spinnerVariants> {\n  variant?: \"gear\" | \"dotted\" | \"leds\";\n}\n\nexport function Spinner({\n  className,\n  size = \"default\",\n  variant = \"gear\",\n  ...props\n}: SpinnerProps) {\n  if (variant === \"leds\") {\n    return (\n      <div className={cn(\"inline-flex items-center gap-1.5\", className)} {...props}>\n        <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-bounce [animation-delay:-0.3s]\" />\n        <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-bounce [animation-delay:-0.15s]\" />\n        <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-bounce\" />\n      </div>\n    );\n  }\n\n  if (variant === \"gear\") {\n    return (\n      <div className={cn(\"inline-flex items-center justify-center\", className)} {...props}>\n        <Settings className={cn(spinnerVariants({ size }))} />\n      </div>\n    );\n  }\n\n  // Dotted Ring\n  return (\n    <div\n      className={cn(\n        \"inline-block rounded-full border-2 border-t-[var(--mkl-amb)] border-r-[var(--mkl-amb)]/30 border-b-transparent border-l-transparent animate-spin shadow-[0_0_8px_rgba(242,176,30,0.4)]\",\n        size === \"sm\" ? \"h-4 w-4\" : size === \"lg\" ? \"h-8 w-8\" : \"h-6 w-6\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n",
+          "target": "spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Tactical Status Badge",
+      "description": "Stamped metal status chips and condition annunciators",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/badge.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const badgeVariants = cva(\n  \"inline-flex items-center gap-1.5 px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider rounded-[2px] select-none border shadow-[0_1px_2px_#000]\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-[var(--mkl-surface-low)] text-[var(--mkl-on-surface)] border-[var(--mkl-surface-high)]\",\n        caution:\n          \"bg-[var(--mkl-amb-dim)] text-[var(--mkl-amb)] border-[var(--mkl-amb)] shadow-[0_0_6px_rgba(242,176,30,0.3)]\",\n        danger:\n          \"bg-[#400E0E] text-[var(--mkl-danger-light)] border-[var(--mkl-danger)] shadow-[0_0_6px_rgba(211,47,47,0.3)]\",\n        secure:\n          \"bg-[var(--mkl-emerald-dim)] text-[var(--mkl-emerald-light)] border-[var(--mkl-emerald)] shadow-[0_0_6px_rgba(46,125,50,0.3)]\",\n        stencil:\n          \"bg-transparent text-[var(--mkl-steel-1)] border-[var(--mkl-steel-2)]\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nexport interface BadgeProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof badgeVariants> {\n  dot?: boolean;\n}\n\nexport function Badge({\n  className,\n  variant,\n  dot = false,\n  children,\n  ...props\n}: BadgeProps) {\n  return (\n    <div className={cn(badgeVariants({ variant, className }))} {...props}>\n      {dot && (\n        <span className=\"w-1.5 h-1.5 rounded-full bg-current shadow-[0_0_4px_currentColor]\" />\n      )}\n      {children}\n    </div>\n  );\n}\n",
+          "target": "badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Bolted Dialog",
+      "description": "Heavy bolted metal modal dialog with diagonal hazard stripes, corner screws, and focus trapping",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "chassis-plate",
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/dialog.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as DialogPrimitive from \"@radix-ui/react-dialog\";\nimport { X } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\nimport { HexScrew } from \"./chassis-plate\";\n\nexport const Dialog = DialogPrimitive.Root;\nexport const DialogTrigger = DialogPrimitive.Trigger;\nexport const DialogPortal = DialogPrimitive.Portal;\nexport const DialogClose = DialogPrimitive.Close;\n\nexport const DialogOverlay = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Overlay>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>\n>(({ className, ...props }, ref) => (\n  <DialogPrimitive.Overlay\n    ref={ref}\n    className={cn(\n      \"fixed inset-0 z-50 bg-black/75 backdrop-blur-sm\",\n      \"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0\",\n      className\n    )}\n    {...props}\n  />\n));\nDialogOverlay.displayName = DialogPrimitive.Overlay.displayName;\n\nexport const DialogContent = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {\n    serial?: string;\n    hazardHeader?: boolean;\n    hasScrews?: boolean;\n  }\n>(({ className, children, serial = \"MODAL-OVL-055\", hazardHeader = true, hasScrews = true, ...props }, ref) => (\n  <DialogPortal>\n    <DialogOverlay />\n    <DialogPrimitive.Content\n      ref={ref}\n      className={cn(\n        \"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%]\",\n        \"bg-[var(--mkl-surface)] border-2 border-[var(--mkl-surface-high)] rounded-lg shadow-[0_24px_50px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.1)]\",\n        \"duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]\",\n        \"overflow-hidden font-mono text-xs\",\n        className\n      )}\n      {...props}\n    >\n      {/* Optional Top Diagonal Hazard Striping Band */}\n      {hazardHeader && <div className=\"h-2 w-full hazard-stripes\" />}\n\n      <div className=\"relative p-6\">\n        {hasScrews && (\n          <>\n            <HexScrew className=\"absolute top-2.5 left-2.5\" />\n            <HexScrew className=\"absolute top-2.5 right-2.5\" />\n            <HexScrew className=\"absolute bottom-2.5 left-2.5\" />\n            <HexScrew className=\"absolute bottom-2.5 right-2.5\" />\n          </>\n        )}\n\n        {/* Top Header Information Strip */}\n        <div className=\"flex items-center justify-between pb-3 mb-4 border-b border-[var(--mkl-surface-mid)] font-mono text-[10px] text-[var(--mkl-amb)]\">\n          <div className=\"flex items-center gap-2\">\n            <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)]\" />\n            <span className=\"font-bold tracking-widest uppercase\">\n              ARMORED ENCLOSURE INTERLOCK\n            </span>\n          </div>\n          {serial && (\n            <span className=\"text-[var(--mkl-steel-1)]\">\n              [{serial}]\n            </span>\n          )}\n        </div>\n\n        {children}\n\n        {/* Tactical Close Keycap */}\n        <DialogPrimitive.Close className=\"absolute right-4 top-4 rounded-[3px] bg-[var(--mkl-key-dark)] border border-[var(--mkl-surface-high)] p-1 text-[var(--mkl-steel-1)] hover:text-white shadow-[0_2px_0_#000] active:translate-y-[1px] transition-all focus:outline-none focus:ring-1 focus:ring-[var(--mkl-amb)]\">\n          <X className=\"h-4 w-4\" />\n          <span className=\"sr-only\">Close</span>\n        </DialogPrimitive.Close>\n      </div>\n    </DialogPrimitive.Content>\n  </DialogPortal>\n));\nDialogContent.displayName = DialogPrimitive.Content.displayName;\n\nexport const DialogHeader = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) => (\n  <div\n    className={cn(\"flex flex-col space-y-1.5 text-left mb-4\", className)}\n    {...props}\n  />\n);\nDialogHeader.displayName = \"DialogHeader\";\n\nexport const DialogFooter = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) => (\n  <div\n    className={cn(\n      \"flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 pt-4 border-t border-[var(--mkl-surface-mid)] mt-4\",\n      className\n    )}\n    {...props}\n  />\n);\nDialogFooter.displayName = \"DialogFooter\";\n\nexport const DialogTitle = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Title>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>\n>(({ className, ...props }, ref) => (\n  <DialogPrimitive.Title\n    ref={ref}\n    className={cn(\n      \"font-sans text-xl font-black uppercase tracking-wide text-white leading-none\",\n      className\n    )}\n    {...props}\n  />\n));\nDialogTitle.displayName = DialogPrimitive.Title.displayName;\n\nexport const DialogDescription = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Description>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>\n>(({ className, ...props }, ref) => (\n  <DialogPrimitive.Description\n    ref={ref}\n    className={cn(\"font-mono text-xs text-[var(--mkl-steel-1)] leading-relaxed mt-1\", className)}\n    {...props}\n  />\n));\nDialogDescription.displayName = DialogPrimitive.Description.displayName;\n",
+          "target": "dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Ganged Ops Tabs",
+      "description": "Interlocked mechanical switchbank tabs with active amber LED jewels and physical depression",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/tabs.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as TabsPrimitive from \"@radix-ui/react-tabs\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Tabs = TabsPrimitive.Root;\n\nexport const TabsList = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.List>,\n  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> & {\n    label?: string;\n    serial?: string;\n  }\n>(({ className, label, serial, children, ...props }, ref) => (\n  <div className=\"flex flex-col p-2 rounded bg-[var(--mkl-surface)] border border-[var(--mkl-surface-high)] shadow-[0_4px_12px_rgba(0,0,0,0.5)]\">\n    {(label || serial) && (\n      <div className=\"flex items-center justify-between pb-1.5 px-1 border-b border-[var(--mkl-surface-mid)] mb-2 font-mono text-[10px]\">\n        {label && (\n          <span className=\"font-bold uppercase tracking-wider text-[var(--mkl-on-surface)]\">\n            {label}\n          </span>\n        )}\n        {serial && (\n          <span className=\"text-[var(--mkl-steel-1)]\">[{serial}]</span>\n        )}\n      </div>\n    )}\n    <TabsPrimitive.List\n      ref={ref}\n      className={cn(\n        \"inline-flex items-center gap-1.5 p-1 rounded bg-[var(--mkl-surface-low)] border border-[var(--mkl-surface-high)] shadow-[inset_0_2px_4px_#000] overflow-x-auto\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </TabsPrimitive.List>\n  </div>\n));\nTabsList.displayName = TabsPrimitive.List.displayName;\n\nexport const TabsTrigger = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Trigger>,\n  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & {\n    hasLed?: boolean;\n  }\n>(({ className, hasLed = true, children, ...props }, ref) => (\n  <TabsPrimitive.Trigger\n    ref={ref}\n    className={cn(\n      \"relative inline-flex items-center justify-center gap-2 px-3.5 py-2 font-mono text-xs font-bold uppercase tracking-wider rounded-[3px] select-none\",\n      \"text-[var(--mkl-steel-1)] transition-all duration-80\",\n      \"hover:text-white hover:bg-[var(--mkl-surface-high)]/60\",\n      \"focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--mkl-amb)]\",\n      \"disabled:pointer-events-none disabled:opacity-40\",\n      // Active latched key state: depressed key, rust orange enamel, amber LED active\n      \"data-[state=active]:bg-[var(--mkl-acc)] data-[state=active]:text-white data-[state=active]:shadow-[0_2px_0_#8E4417,inset_0_1px_2px_rgba(255,255,255,0.4)]\",\n      className\n    )}\n    {...props}\n  >\n    {hasLed && (\n      <span\n        className={cn(\n          \"w-1.5 h-1.5 rounded-full border border-black/80 transition-all duration-100\",\n          \"bg-[var(--mkl-amb-dim)] group-data-[state=active]:bg-[var(--mkl-amb)] group-data-[state=active]:shadow-[0_0_6px_var(--mkl-amb)]\",\n          // Direct Radix attribute selector for active state\n          \"[[data-state=active]>&]:bg-[var(--mkl-amb)] [[data-state=active]>&]:shadow-[0_0_8px_#F2B01E,0_0_2px_#FFF]\"\n        )}\n        aria-hidden=\"true\"\n      />\n    )}\n    <span>{children}</span>\n  </TabsPrimitive.Trigger>\n));\nTabsTrigger.displayName = TabsPrimitive.Trigger.displayName;\n\nexport const TabsContent = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>\n>(({ className, ...props }, ref) => (\n  <TabsPrimitive.Content\n    ref={ref}\n    className={cn(\n      \"mt-3 rounded-lg border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-5 shadow-[0_8px_20px_rgba(0,0,0,0.5)] font-mono text-xs text-[var(--mkl-on-surface)]\",\n      \"focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--mkl-amb)]\",\n      className\n    )}\n    {...props}\n  />\n));\nTabsContent.displayName = TabsPrimitive.Content.displayName;\n",
+          "target": "tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "BNC Pinout Popover",
+      "description": "Bolted pinout tag popover with hardware telemetry borders and callout pointer",
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/popover.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as PopoverPrimitive from \"@radix-ui/react-popover\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Popover = PopoverPrimitive.Root;\nexport const PopoverTrigger = PopoverPrimitive.Trigger;\n\nexport const PopoverContent = React.forwardRef<\n  React.ElementRef<typeof PopoverPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & {\n    title?: string;\n    serial?: string;\n  }\n>(({ className, align = \"center\", sideOffset = 6, title, serial, children, ...props }, ref) => (\n  <PopoverPrimitive.Portal>\n    <PopoverPrimitive.Content\n      ref={ref}\n      align={align}\n      sideOffset={sideOffset}\n      className={cn(\n        \"z-50 w-72 rounded-md border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-4 font-mono text-xs text-[var(--mkl-on-surface)]\",\n        \"shadow-[0_16px_32px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.1)] outline-none\",\n        \"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95\",\n        className\n      )}\n      {...props}\n    >\n      {(title || serial) && (\n        <div className=\"flex items-center justify-between pb-2 mb-2 border-b border-[var(--mkl-surface-mid)] font-mono text-[10px] text-[var(--mkl-amb)]\">\n          {title && <span className=\"font-bold uppercase\">{title}</span>}\n          {serial && <span className=\"text-[var(--mkl-steel-1)]\">[{serial}]</span>}\n        </div>\n      )}\n      {children}\n    </PopoverPrimitive.Content>\n  </PopoverPrimitive.Portal>\n));\nPopoverContent.displayName = PopoverPrimitive.Content.displayName;\n",
+          "target": "popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu Bay",
+      "description": "Engraved alloy rows with keyboard shortcuts and laser separators",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as DropdownMenuPrimitive from \"@radix-ui/react-dropdown-menu\";\nimport { Check, ChevronRight } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const DropdownMenu = DropdownMenuPrimitive.Root;\nexport const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;\nexport const DropdownMenuGroup = DropdownMenuPrimitive.Group;\nexport const DropdownMenuPortal = DropdownMenuPrimitive.Portal;\nexport const DropdownMenuSub = DropdownMenuPrimitive.Sub;\n\nexport const DropdownMenuSubTrigger = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {\n    inset?: boolean;\n  }\n>(({ className, inset, children, ...props }, ref) => (\n  <DropdownMenuPrimitive.SubTrigger\n    ref={ref}\n    className={cn(\n      \"flex cursor-default select-none items-center rounded-sm px-2.5 py-1.5 font-mono text-xs outline-none\",\n      \"focus:bg-[var(--mkl-surface-high)] focus:text-[var(--mkl-amb)] data-[state=open]:bg-[var(--mkl-surface-high)]\",\n      inset && \"pl-8\",\n      className\n    )}\n    {...props}\n  >\n    {children}\n    <ChevronRight className=\"ml-auto h-3.5 w-3.5\" />\n  </DropdownMenuPrimitive.SubTrigger>\n));\nDropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName;\n\nexport const DropdownMenuContent = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>\n>(({ className, sideOffset = 4, ...props }, ref) => (\n  <DropdownMenuPrimitive.Portal>\n    <DropdownMenuPrimitive.Content\n      ref={ref}\n      sideOffset={sideOffset}\n      className={cn(\n        \"z-50 min-w-[12rem] overflow-hidden rounded-md border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-1.5 font-mono text-xs text-[var(--mkl-on-surface)]\",\n        \"shadow-[0_16px_36px_rgba(0,0,0,0.85)]\",\n        \"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95\",\n        className\n      )}\n      {...props}\n    />\n  </DropdownMenuPrimitive.Portal>\n));\nDropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;\n\nexport const DropdownMenuItem = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.Item>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {\n    inset?: boolean;\n  }\n>(({ className, inset, ...props }, ref) => (\n  <DropdownMenuPrimitive.Item\n    ref={ref}\n    className={cn(\n      \"relative flex cursor-default select-none items-center rounded-[2px] px-2.5 py-1.5 font-mono text-xs outline-none transition-colors duration-80\",\n      \"focus:bg-[var(--mkl-acc)] focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-40\",\n      inset && \"pl-8\",\n      className\n    )}\n    {...props}\n  />\n));\nDropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;\n\nexport const DropdownMenuSeparator = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>\n>(({ className, ...props }, ref) => (\n  <DropdownMenuPrimitive.Separator\n    ref={ref}\n    className={cn(\"-mx-1 my-1.5 h-[1px] bg-[var(--mkl-surface-mid)]\", className)}\n    {...props}\n  />\n));\nDropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;\n\nexport const DropdownMenuShortcut = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLSpanElement>) => {\n  return (\n    <span\n      className={cn(\"ml-auto text-[10px] tracking-widest text-[var(--mkl-steel-1)] opacity-70\", className)}\n      {...props}\n    />\n  );\n};\nDropdownMenuShortcut.displayName = \"DropdownMenuShortcut\";\n",
+          "target": "dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Stencil Tooltip",
+      "description": "Laser-stenciled identification label tag tooltip",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as TooltipPrimitive from \"@radix-ui/react-tooltip\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const TooltipProvider = TooltipPrimitive.Provider;\nexport const Tooltip = TooltipPrimitive.Root;\nexport const TooltipTrigger = TooltipPrimitive.Trigger;\n\nexport const TooltipContent = React.forwardRef<\n  React.ElementRef<typeof TooltipPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>\n>(({ className, sideOffset = 4, ...props }, ref) => (\n  <TooltipPrimitive.Portal>\n    <TooltipPrimitive.Content\n      ref={ref}\n      sideOffset={sideOffset}\n      className={cn(\n        \"z-50 overflow-hidden rounded-[2px] bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] px-2.5 py-1 text-[11px] font-mono font-bold text-[var(--mkl-amb)] uppercase shadow-[0_4px_12px_rgba(0,0,0,0.6)]\",\n        \"animate-in fade-in-0 zoom-in-95\",\n        className\n      )}\n      {...props}\n    />\n  </TooltipPrimitive.Portal>\n));\nTooltipContent.displayName = TooltipPrimitive.Content.displayName;\n",
+          "target": "tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Chevron Breadcrumb",
+      "description": "Tactical navigation vector trail with glowing active segment",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { ChevronRight } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> {\n  separator?: React.ReactNode;\n}\n\nexport function Breadcrumb({\n  className,\n  separator = <ChevronRight className=\"w-3.5 h-3.5 text-[var(--mkl-amb)] shrink-0\" />,\n  children,\n  ...props\n}: BreadcrumbProps) {\n  return (\n    <nav\n      aria-label=\"breadcrumb\"\n      className={cn(\n        \"inline-flex items-center gap-2 p-2 rounded bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] font-mono text-xs shadow-[inset_0_1px_3px_#000] overflow-x-auto\",\n        className\n      )}\n      {...props}\n    >\n      <ol className=\"flex items-center gap-2\">{children}</ol>\n    </nav>\n  );\n}\n\nexport function BreadcrumbItem({\n  className,\n  ...props\n}: React.LiHTMLAttributes<HTMLLIElement>) {\n  return (\n    <li\n      className={cn(\"inline-flex items-center gap-2 text-[var(--mkl-steel-1)]\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function BreadcrumbLink({\n  className,\n  active,\n  ...props\n}: React.AnchorHTMLAttributes<HTMLAnchorElement> & { active?: boolean }) {\n  return (\n    <a\n      className={cn(\n        \"font-bold uppercase tracking-wider transition-colors hover:text-white\",\n        active && \"text-[var(--mkl-amb)] lcd-glow\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n",
+          "target": "breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Inspection Hatch Accordion",
+      "description": "Sliding hardware inspection hatch accordion with LED status indicators and rotating chevrons",
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/accordion.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as AccordionPrimitive from \"@radix-ui/react-accordion\";\nimport { ChevronDown } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Accordion = AccordionPrimitive.Root;\n\nexport const AccordionItem = React.forwardRef<\n  React.ElementRef<typeof AccordionPrimitive.Item>,\n  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>\n>(({ className, ...props }, ref) => (\n  <AccordionPrimitive.Item\n    ref={ref}\n    className={cn(\n      \"rounded border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] mb-2 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.5)]\",\n      className\n    )}\n    {...props}\n  />\n));\nAccordionItem.displayName = \"AccordionItem\";\n\nexport const AccordionTrigger = React.forwardRef<\n  React.ElementRef<typeof AccordionPrimitive.Trigger>,\n  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {\n    serial?: string;\n  }\n>(({ className, serial, children, ...props }, ref) => (\n  <AccordionPrimitive.Header className=\"flex\">\n    <AccordionPrimitive.Trigger\n      ref={ref}\n      className={cn(\n        \"flex flex-1 items-center justify-between p-3.5 font-mono text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)] transition-all\",\n        \"hover:bg-[var(--mkl-surface-high)]/50 [&[data-state=open]>svg]:rotate-180\",\n        className\n      )}\n      {...props}\n    >\n      <div className=\"flex items-center gap-2\">\n        <span className=\"w-1.5 h-1.5 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_4px_var(--mkl-amb)]\" />\n        <span>{children}</span>\n        {serial && (\n          <span className=\"text-[10px] text-[var(--mkl-steel-1)] font-normal\">\n            [{serial}]\n          </span>\n        )}\n      </div>\n      <ChevronDown className=\"h-4 w-4 shrink-0 transition-transform duration-200 text-[var(--mkl-amb)]\" />\n    </AccordionPrimitive.Trigger>\n  </AccordionPrimitive.Header>\n));\nAccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;\n\nexport const AccordionContent = React.forwardRef<\n  React.ElementRef<typeof AccordionPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>\n>(({ className, children, ...props }, ref) => (\n  <AccordionPrimitive.Content\n    ref={ref}\n    className=\"overflow-hidden font-mono text-xs text-[var(--mkl-steel-1)] transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down border-t border-[var(--mkl-surface-mid)] bg-[var(--mkl-surface-low)]\"\n    {...props}\n  >\n    <div className={cn(\"p-4 leading-relaxed\", className)}>{children}</div>\n  </AccordionPrimitive.Content>\n));\nAccordionContent.displayName = AccordionPrimitive.Content.displayName;\n",
+          "target": "accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Chassis Card",
+      "description": "Armored chassis plate card with hex rivets and hazard warning lips",
+      "registryDependencies": [
+        "chassis-plate",
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/card.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\nimport { HexScrew } from \"./chassis-plate\";\n\nexport interface CardProps extends React.HTMLAttributes<HTMLDivElement> {\n  serial?: string;\n  hasScrews?: boolean;\n  hazardBorder?: boolean;\n}\n\nexport const Card = React.forwardRef<HTMLDivElement, CardProps>(\n  ({ className, serial, hasScrews = false, hazardBorder = false, children, ...props }, ref) => {\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"relative rounded-lg border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-5 font-mono text-xs text-[var(--mkl-on-surface)]\",\n          \"shadow-[0_12px_28px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)]\",\n          hazardBorder && \"border-t-4 border-t-[var(--mkl-amb)]\",\n          className\n        )}\n        {...props}\n      >\n        {hasScrews && (\n          <>\n            <HexScrew className=\"absolute top-2 left-2\" size=\"sm\" />\n            <HexScrew className=\"absolute top-2 right-2\" size=\"sm\" />\n            <HexScrew className=\"absolute bottom-2 left-2\" size=\"sm\" />\n            <HexScrew className=\"absolute bottom-2 right-2\" size=\"sm\" />\n          </>\n        )}\n\n        {serial && (\n          <div className=\"absolute top-3 right-3 text-[10px] text-[var(--mkl-steel-1)] font-mono\">\n            [{serial}]\n          </div>\n        )}\n\n        {children}\n      </div>\n    );\n  }\n);\nCard.displayName = \"Card\";\n\nexport const CardHeader = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex flex-col space-y-1.5 pb-3 border-b border-[var(--mkl-surface-mid)] mb-3\", className)}\n    {...props}\n  />\n));\nCardHeader.displayName = \"CardHeader\";\n\nexport const CardTitle = React.forwardRef<\n  HTMLHeadingElement,\n  React.HTMLAttributes<HTMLHeadingElement>\n>(({ className, ...props }, ref) => (\n  <h3\n    ref={ref}\n    className={cn(\"font-sans text-lg font-black uppercase tracking-wider text-white leading-none\", className)}\n    {...props}\n  />\n));\nCardTitle.displayName = \"CardTitle\";\n\nexport const CardDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => (\n  <p\n    ref={ref}\n    className={cn(\"font-mono text-[11px] text-[var(--mkl-steel-1)] leading-relaxed\", className)}\n    {...props}\n  />\n));\nCardDescription.displayName = \"CardDescription\";\n\nexport const CardContent = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn(\"pt-1\", className)} {...props} />\n));\nCardContent.displayName = \"CardContent\";\n\nexport const CardFooter = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex items-center pt-3 border-t border-[var(--mkl-surface-mid)] mt-3\", className)}\n    {...props}\n  />\n));\nCardFooter.displayName = \"CardFooter\";\n",
+          "target": "card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Logistics Manifest Table",
+      "description": "Hardened zebra data table with amber column headers and dense metrology formatting",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/table.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Table = React.forwardRef<\n  HTMLTableElement,\n  React.HTMLAttributes<HTMLTableElement>\n>(({ className, ...props }, ref) => (\n  <div className=\"relative w-full overflow-auto rounded border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] shadow-[0_8px_24px_rgba(0,0,0,0.5)]\">\n    <table\n      ref={ref}\n      className={cn(\"w-full caption-bottom font-mono text-xs text-left\", className)}\n      {...props}\n    />\n  </div>\n));\nTable.displayName = \"Table\";\n\nexport const TableHeader = React.forwardRef<\n  HTMLTableSectionElement,\n  React.HTMLAttributes<HTMLTableSectionElement>\n>(({ className, ...props }, ref) => (\n  <thead\n    ref={ref}\n    className={cn(\n      \"border-b-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface-low)] font-bold text-[var(--mkl-amb)] uppercase tracking-wider\",\n      className\n    )}\n    {...props}\n  />\n));\nTableHeader.displayName = \"TableHeader\";\n\nexport const TableBody = React.forwardRef<\n  HTMLTableSectionElement,\n  React.HTMLAttributes<HTMLTableSectionElement>\n>(({ className, ...props }, ref) => (\n  <tbody\n    ref={ref}\n    className={cn(\"divide-y divide-[var(--mkl-surface-mid)]\", className)}\n    {...props}\n  />\n));\nTableBody.displayName = \"TableBody\";\n\nexport const TableRow = React.forwardRef<\n  HTMLTableRowElement,\n  React.HTMLAttributes<HTMLTableRowElement>\n>(({ className, ...props }, ref) => (\n  <tr\n    ref={ref}\n    className={cn(\n      \"transition-colors hover:bg-[var(--mkl-surface-high)]/60 even:bg-[var(--mkl-surface-low)]/40\",\n      className\n    )}\n    {...props}\n  />\n));\nTableRow.displayName = \"TableRow\";\n\nexport const TableHead = React.forwardRef<\n  HTMLTableCellElement,\n  React.ThHTMLAttributes<HTMLTableCellElement>\n>(({ className, ...props }, ref) => (\n  <th\n    ref={ref}\n    className={cn(\"h-10 px-3.5 text-left align-middle font-bold text-[11px]\", className)}\n    {...props}\n  />\n));\nTableHead.displayName = \"TableHead\";\n\nexport const TableCell = React.forwardRef<\n  HTMLTableCellElement,\n  React.TdHTMLAttributes<HTMLTableCellElement>\n>(({ className, ...props }, ref) => (\n  <td\n    ref={ref}\n    className={cn(\"p-3.5 align-middle text-[var(--mkl-on-surface)]\", className)}\n    {...props}\n  />\n));\nTableCell.displayName = \"TableCell\";\n",
+          "target": "table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Dot-Matrix CRT Chart",
+      "description": "Analog oscilloscope raster charts and FFT spectrum analyzer bars with phosphor glow",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/chart.tsx",
+          "type": "registry:ui",
+          "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface ChartProps extends React.HTMLAttributes<HTMLDivElement> {\n  type?: \"bar\" | \"line\" | \"oscilloscope\";\n  data?: number[];\n  title?: string;\n  serial?: string;\n  color?: \"amber\" | \"emerald\" | \"cyan\";\n}\n\nexport function Chart({\n  className,\n  type = \"bar\",\n  data = [12, 45, 68, 92, 74, 55, 83, 62, 40, 78, 95, 30, 60, 88],\n  title,\n  serial = \"FFT-16-BAND\",\n  color = \"amber\",\n  ...props\n}: ChartProps) {\n  const maxVal = Math.max(...data, 100);\n\n  const colorStyles = {\n    amber: {\n      bar: \"bg-[var(--mkl-amb)] shadow-[0_0_8px_var(--mkl-amb)]\",\n      line: \"#F2B01E\",\n      text: \"text-[var(--mkl-amb)]\",\n    },\n    emerald: {\n      bar: \"bg-[#00E676] shadow-[0_0_8px_#00E676]\",\n      line: \"#00E676\",\n      text: \"text-[#00E676]\",\n    },\n    cyan: {\n      bar: \"bg-[var(--mkl-cyan)] shadow-[0_0_8px_var(--mkl-cyan)]\",\n      line: \"#0288D1\",\n      text: \"text-[var(--mkl-cyan)]\",\n    },\n  };\n\n  const selectedTheme = colorStyles[color];\n\n  return (\n    <div\n      className={cn(\n        \"rounded-lg border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-lcd)] p-4 font-mono text-xs shadow-[inset_0_3px_10px_#000] lcd-screen\",\n        className\n      )}\n      {...props}\n    >\n      {/* Top Telemetry Header */}\n      <div className=\"flex items-center justify-between pb-2 mb-3 border-b border-[var(--mkl-lcd-ghost)] text-[10px]\">\n        <div className=\"flex items-center gap-2\">\n          <span className=\"w-1.5 h-1.5 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-pulse\" />\n          <span className={cn(\"font-bold uppercase tracking-wider\", selectedTheme.text)}>\n            {title || \"CRT-MONITOR // ANALOG RF RASTER\"}\n          </span>\n        </div>\n        <span className=\"text-[var(--mkl-steel-1)]\">[{serial}]</span>\n      </div>\n\n      {/* Render Chart Mode */}\n      {type === \"bar\" ? (\n        <div className=\"flex items-end gap-1.5 h-32 pt-2 px-1 border-b border-[var(--mkl-lcd-ghost)]\">\n          {data.map((val, idx) => {\n            const heightPercent = Math.min(100, Math.max(8, (val / maxVal) * 100));\n            return (\n              <div\n                key={idx}\n                className=\"flex-1 flex flex-col justify-end items-center h-full group relative\"\n              >\n                <div\n                  style={{ height: `${heightPercent}%` }}\n                  className={cn(\"w-full rounded-[1px] transition-all duration-150\", selectedTheme.bar)}\n                />\n              </div>\n            );\n          })}\n        </div>\n      ) : (\n        /* Oscilloscope Vector Line Path */\n        <div className=\"h-32 w-full flex items-center justify-center relative overflow-hidden\">\n          {/* Phosphor Grid Lines */}\n          <div className=\"absolute inset-0 bg-[linear-gradient(to_right,rgba(255,176,0,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,176,0,0.08)_1px,transparent_1px)] bg-[size:16px_16px]\" />\n\n          <svg className=\"w-full h-full relative z-10\" viewBox=\"0 0 400 100\" preserveAspectRatio=\"none\">\n            <path\n              d=\"M 0 50 Q 50 10, 100 50 T 200 50 T 300 50 T 400 50\"\n              fill=\"none\"\n              stroke={selectedTheme.line}\n              strokeWidth=\"2.5\"\n              className=\"drop-shadow-[0_0_8px_rgba(255,176,0,0.8)]\"\n            />\n            <path\n              d=\"M 0 50 Q 40 85, 90 50 T 180 50 T 270 50 T 400 50\"\n              fill=\"none\"\n              stroke={selectedTheme.line}\n              strokeWidth=\"1.2\"\n              strokeDasharray=\"4 2\"\n              opacity=\"0.6\"\n            />\n          </svg>\n        </div>\n      )}\n\n      {/* Bottom CRT Readout Scale */}\n      <div className=\"flex items-center justify-between pt-2 text-[10px] text-[var(--mkl-steel-1)]\">\n        <span>TIMEBASE: 50μs/DIV</span>\n        <span>RF-IN: 50Ω BALANCED</span>\n        <span className={cn(\"font-bold\", selectedTheme.text)}>SYNC: LOCKED</span>\n      </div>\n    </div>\n  );\n}\n",
+          "target": "chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Hazard Separator",
+      "description": "Heavy physical divider with diagonal hazard striping and engraved circuit labels",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/separator.tsx",
+          "type": "registry:ui",
+          "content": "import * as React from \"react\";\nimport * as SeparatorPrimitive from \"@radix-ui/react-separator\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface SeparatorProps\n  extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {\n  variant?: \"default\" | \"hazard\" | \"danger-hazard\" | \"groove\";\n  label?: string;\n}\n\nexport const Separator = React.forwardRef<\n  React.ElementRef<typeof SeparatorPrimitive.Root>,\n  SeparatorProps\n>(\n  (\n    {\n      className,\n      orientation = \"horizontal\",\n      decorative = true,\n      variant = \"default\",\n      label,\n      ...props\n    },\n    ref\n  ) => {\n    if (variant === \"hazard\" || variant === \"danger-hazard\") {\n      return (\n        <div className=\"relative w-full py-2\">\n          <div\n            className={cn(\n              \"h-2 w-full rounded-[1px] shadow-[inset_0_1px_2px_#000]\",\n              variant === \"danger-hazard\" ? \"hazard-stripes-danger\" : \"hazard-stripes\",\n              className\n            )}\n          />\n        </div>\n      );\n    }\n\n    if (label) {\n      return (\n        <div className=\"relative flex items-center py-2 select-none font-mono text-[10px] text-[var(--mkl-amb)]\">\n          <div className=\"flex-grow border-t border-[var(--mkl-surface-high)]\" />\n          <span className=\"flex-shrink mx-3 px-2 py-0.5 rounded bg-[var(--mkl-surface-low)] border border-[var(--mkl-surface-high)] font-bold tracking-widest uppercase\">\n            {label}\n          </span>\n          <div className=\"flex-grow border-t border-[var(--mkl-surface-high)]\" />\n        </div>\n      );\n    }\n\n    return (\n      <SeparatorPrimitive.Root\n        ref={ref}\n        decorative={decorative}\n        orientation={orientation}\n        className={cn(\n          \"shrink-0 bg-[var(--mkl-surface-high)]\",\n          orientation === \"horizontal\" ? \"h-[1px] w-full\" : \"h-full w-[1px]\",\n          variant === \"groove\" && \"shadow-[0_1px_0_rgba(255,255,255,0.08)]\",\n          className\n        )}\n        {...props}\n      />\n    );\n  }\n);\nSeparator.displayName = \"Separator\";\n",
+          "target": "separator.tsx"
+        }
+      ]
+    }
+  ]
+}

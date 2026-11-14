@@ -1,0 +1,21 @@
+{
+  "name": "switch",
+  "type": "registry:ui",
+  "title": "Toggle Lever Switch",
+  "description": "Heavy physical toggle lever with overshoot spring physics",
+  "dependencies": [
+    "@radix-ui/react-switch"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/switch.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport * as SwitchPrimitive from \"@radix-ui/react-switch\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface SwitchProps\n  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> {\n  label?: string;\n  sublabel?: string;\n}\n\nexport const Switch = React.forwardRef<\n  React.ElementRef<typeof SwitchPrimitive.Root>,\n  SwitchProps\n>(({ className, label, sublabel, ...props }, ref) => {\n  return (\n    <div className=\"inline-flex items-center gap-3 select-none\">\n      <SwitchPrimitive.Root\n        ref={ref}\n        className={cn(\n          \"peer inline-flex h-6 w-12 shrink-0 cursor-pointer items-center rounded-full transition-colors duration-200\",\n          \"bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] shadow-[inset_0_2px_5px_#000]\",\n          \"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mkl-amb)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--mkl-surface)]\",\n          \"disabled:cursor-not-allowed disabled:opacity-40\",\n          \"data-[state=checked]:bg-[var(--mkl-surface-high)] data-[state=checked]:border-[var(--mkl-amb)]/60\",\n          className\n        )}\n        {...props}\n      >\n        <SwitchPrimitive.Thumb\n          className={cn(\n            \"pointer-events-none block h-5 w-5 rounded-full transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]\",\n            \"bg-[var(--mkl-steel-1)] border border-white/40 shadow-[0_2px_4px_rgba(0,0,0,0.6)]\",\n            \"data-[state=checked]:translate-x-6 data-[state=checked]:bg-[var(--mkl-acc)] data-[state=checked]:shadow-[0_0_8px_var(--mkl-acc)]\",\n            \"data-[state=unchecked]:translate-x-0.5\"\n          )}\n        />\n      </SwitchPrimitive.Root>\n\n      {(label || sublabel) && (\n        <div className=\"flex flex-col leading-tight\">\n          {label && (\n            <span className=\"font-mono text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)]\">\n              {label}\n            </span>\n          )}\n          {sublabel && (\n            <span className=\"font-mono text-[10px] text-[var(--mkl-steel-1)]\">\n              {sublabel}\n            </span>\n          )}\n        </div>\n      )}\n    </div>\n  );\n});\n\nSwitch.displayName = \"Switch\";\n",
+      "target": "switch.tsx"
+    }
+  ]
+}

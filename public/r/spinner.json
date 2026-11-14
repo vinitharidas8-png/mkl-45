@@ -1,0 +1,22 @@
+{
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "CNC Spinner Loader",
+  "description": "Industrial loaders: CNC gear, dotted amber ring, and tri-state bouncing LEDs",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/spinner.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Settings } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const spinnerVariants = cva(\"animate-spin text-[var(--mkl-amb)]\", {\n  variants: {\n    size: {\n      sm: \"h-4 w-4\",\n      default: \"h-6 w-6\",\n      lg: \"h-8 w-8\",\n    },\n  },\n  defaultVariants: {\n    size: \"default\",\n  },\n});\n\nexport interface SpinnerProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof spinnerVariants> {\n  variant?: \"gear\" | \"dotted\" | \"leds\";\n}\n\nexport function Spinner({\n  className,\n  size = \"default\",\n  variant = \"gear\",\n  ...props\n}: SpinnerProps) {\n  if (variant === \"leds\") {\n    return (\n      <div className={cn(\"inline-flex items-center gap-1.5\", className)} {...props}>\n        <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-bounce [animation-delay:-0.3s]\" />\n        <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-bounce [animation-delay:-0.15s]\" />\n        <span className=\"w-2 h-2 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)] animate-bounce\" />\n      </div>\n    );\n  }\n\n  if (variant === \"gear\") {\n    return (\n      <div className={cn(\"inline-flex items-center justify-center\", className)} {...props}>\n        <Settings className={cn(spinnerVariants({ size }))} />\n      </div>\n    );\n  }\n\n  // Dotted Ring\n  return (\n    <div\n      className={cn(\n        \"inline-block rounded-full border-2 border-t-[var(--mkl-amb)] border-r-[var(--mkl-amb)]/30 border-b-transparent border-l-transparent animate-spin shadow-[0_0_8px_rgba(242,176,30,0.4)]\",\n        size === \"sm\" ? \"h-4 w-4\" : size === \"lg\" ? \"h-8 w-8\" : \"h-6 w-6\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n",
+      "target": "spinner.tsx"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "label",
+  "type": "registry:ui",
+  "title": "Label Stencil",
+  "description": "Laser-etched metal label plate with serial notation",
+  "dependencies": [
+    "@radix-ui/react-label"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/label.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport * as LabelPrimitive from \"@radix-ui/react-label\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface LabelProps\n  extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {\n  serial?: string;\n}\n\nexport const Label = React.forwardRef<\n  React.ElementRef<typeof LabelPrimitive.Root>,\n  LabelProps\n>(({ className, serial, children, ...props }, ref) => {\n  return (\n    <div className=\"flex items-center justify-between mb-1.5 font-mono\">\n      <LabelPrimitive.Root\n        ref={ref}\n        className={cn(\n          \"text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)] select-none cursor-pointer\",\n          \"peer-disabled:cursor-not-allowed peer-disabled:opacity-70\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </LabelPrimitive.Root>\n      {serial && (\n        <span className=\"text-[10px] text-[var(--mkl-steel-1)] opacity-70\">\n          [{serial}]\n        </span>\n      )}\n    </div>\n  );\n});\n\nLabel.displayName = \"Label\";\n",
+      "target": "label.tsx"
+    }
+  ]
+}

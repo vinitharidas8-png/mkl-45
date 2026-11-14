@@ -1,0 +1,18 @@
+{
+  "name": "lcd-screen",
+  "type": "registry:ui",
+  "title": "LCD Screen",
+  "description": "Amber dot-matrix CRT/LCD display well with scanlines, bezel recess, and phosphor glow",
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/lcd-screen.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface LCDScreenProps extends React.HTMLAttributes<HTMLDivElement> {\n  scanlines?: boolean;\n  glow?: boolean;\n}\n\nexport const LCDScreen = React.forwardRef<HTMLDivElement, LCDScreenProps>(\n  ({ className, scanlines = true, glow = true, children, ...props }, ref) => {\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"relative bg-[var(--mkl-lcd)] text-[var(--mkl-lcd-ink)] font-mono p-3 rounded border border-black/80\",\n          \"shadow-[inset_0_3px_8px_rgba(0,0,0,0.9),inset_0_1px_2px_#000]\",\n          scanlines && \"lcd-screen\",\n          glow && \"lcd-glow\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </div>\n    );\n  }\n);\n\nLCDScreen.displayName = \"LCDScreen\";\n",
+      "target": "lcd-screen.tsx"
+    }
+  ]
+}

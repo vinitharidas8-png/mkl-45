@@ -1,0 +1,509 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "mkl45",
+  "homepage": "https://mkl-45.vercel.app",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:file",
+      "title": "MKL-45 Theme Tokens",
+      "description": "MIL-STD-810H industrial field-radio design tokens: sand beige, steel, cerakote rust orange, hazard amber, and LCD styling",
+      "files": [
+        {
+          "path": "registry/mkl45/styles/theme.css",
+          "type": "registry:file",
+          "target": "styles/mkl45-theme.css"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utilities",
+      "description": "cn() utility helper for merging class names",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button Keycap",
+      "description": "Tactile mechanical keycap button with 7 finish variants, 4 sizes, status LED jewel, and 80ms down-stroke travel",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd Tag",
+      "description": "Miniature double-shot mechanical keycap legend tag for hotkey cues",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chassis-plate",
+      "type": "registry:ui",
+      "title": "Chassis Plate",
+      "description": "Cut-corner armored metal equipment plate with hex corner fasteners and engraved serial tag",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/chassis-plate.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "lcd-screen",
+      "type": "registry:ui",
+      "title": "LCD Screen",
+      "description": "Amber dot-matrix CRT/LCD display well with scanlines, bezel recess, and phosphor glow",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/lcd-screen.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input Terminal",
+      "description": "Recessed amber dot-matrix CRT data entry terminal with scanlines and phosphor glow",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea Screen",
+      "description": "Large recessed amber phosphor teletype screen for multiline input feeds",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label Stencil",
+      "description": "Laser-etched metal label plate with serial notation",
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox Stud",
+      "description": "Square latching key switch with recessed amber LED indication",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Toggle Lever Switch",
+      "description": "Heavy physical toggle lever with overshoot spring physics",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Linear Fader Slider",
+      "description": "Horizontal attenuation fader with knurled thumb and analog ruler tick markings",
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "rotary-knob",
+      "type": "registry:ui",
+      "title": "Rotary Attenuator Knob",
+      "description": "Rotational knurled aluminum potentiometer with 270-degree sweep and LCD readout",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/rotary-knob.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert Plate",
+      "description": "Cut-corner tactical alert plate with hazard-striped edge trims and system serials",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Chevron Progress Bar",
+      "description": "12-segment illuminated amber phosphor chevron level meter",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "CNC Spinner Loader",
+      "description": "Industrial loaders: CNC gear, dotted amber ring, and tri-state bouncing LEDs",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Tactical Status Badge",
+      "description": "Stamped metal status chips and condition annunciators",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Bolted Dialog",
+      "description": "Heavy bolted metal modal dialog with diagonal hazard stripes, corner screws, and focus trapping",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "chassis-plate",
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Ganged Ops Tabs",
+      "description": "Interlocked mechanical switchbank tabs with active amber LED jewels and physical depression",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "BNC Pinout Popover",
+      "description": "Bolted pinout tag popover with hardware telemetry borders and callout pointer",
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu Bay",
+      "description": "Engraved alloy rows with keyboard shortcuts and laser separators",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Stencil Tooltip",
+      "description": "Laser-stenciled identification label tag tooltip",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Chevron Breadcrumb",
+      "description": "Tactical navigation vector trail with glowing active segment",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Inspection Hatch Accordion",
+      "description": "Sliding hardware inspection hatch accordion with LED status indicators and rotating chevrons",
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Chassis Card",
+      "description": "Armored chassis plate card with hex rivets and hazard warning lips",
+      "registryDependencies": [
+        "chassis-plate",
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Logistics Manifest Table",
+      "description": "Hardened zebra data table with amber column headers and dense metrology formatting",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Dot-Matrix CRT Chart",
+      "description": "Analog oscilloscope raster charts and FFT spectrum analyzer bars with phosphor glow",
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Hazard Separator",
+      "description": "Heavy physical divider with diagonal hazard striping and engraved circuit labels",
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "files": [
+        {
+          "path": "registry/mkl45/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

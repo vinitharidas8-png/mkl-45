@@ -1,0 +1,22 @@
+{
+  "name": "dropdown-menu",
+  "type": "registry:ui",
+  "title": "Dropdown Menu Bay",
+  "description": "Engraved alloy rows with keyboard shortcuts and laser separators",
+  "dependencies": [
+    "@radix-ui/react-dropdown-menu",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/dropdown-menu.tsx",
+      "type": "registry:ui",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as DropdownMenuPrimitive from \"@radix-ui/react-dropdown-menu\";\nimport { Check, ChevronRight } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const DropdownMenu = DropdownMenuPrimitive.Root;\nexport const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;\nexport const DropdownMenuGroup = DropdownMenuPrimitive.Group;\nexport const DropdownMenuPortal = DropdownMenuPrimitive.Portal;\nexport const DropdownMenuSub = DropdownMenuPrimitive.Sub;\n\nexport const DropdownMenuSubTrigger = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {\n    inset?: boolean;\n  }\n>(({ className, inset, children, ...props }, ref) => (\n  <DropdownMenuPrimitive.SubTrigger\n    ref={ref}\n    className={cn(\n      \"flex cursor-default select-none items-center rounded-sm px-2.5 py-1.5 font-mono text-xs outline-none\",\n      \"focus:bg-[var(--mkl-surface-high)] focus:text-[var(--mkl-amb)] data-[state=open]:bg-[var(--mkl-surface-high)]\",\n      inset && \"pl-8\",\n      className\n    )}\n    {...props}\n  >\n    {children}\n    <ChevronRight className=\"ml-auto h-3.5 w-3.5\" />\n  </DropdownMenuPrimitive.SubTrigger>\n));\nDropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName;\n\nexport const DropdownMenuContent = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>\n>(({ className, sideOffset = 4, ...props }, ref) => (\n  <DropdownMenuPrimitive.Portal>\n    <DropdownMenuPrimitive.Content\n      ref={ref}\n      sideOffset={sideOffset}\n      className={cn(\n        \"z-50 min-w-[12rem] overflow-hidden rounded-md border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-1.5 font-mono text-xs text-[var(--mkl-on-surface)]\",\n        \"shadow-[0_16px_36px_rgba(0,0,0,0.85)]\",\n        \"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95\",\n        className\n      )}\n      {...props}\n    />\n  </DropdownMenuPrimitive.Portal>\n));\nDropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;\n\nexport const DropdownMenuItem = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.Item>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {\n    inset?: boolean;\n  }\n>(({ className, inset, ...props }, ref) => (\n  <DropdownMenuPrimitive.Item\n    ref={ref}\n    className={cn(\n      \"relative flex cursor-default select-none items-center rounded-[2px] px-2.5 py-1.5 font-mono text-xs outline-none transition-colors duration-80\",\n      \"focus:bg-[var(--mkl-acc)] focus:text-white data-[disabled]:pointer-events-none data-[disabled]:opacity-40\",\n      inset && \"pl-8\",\n      className\n    )}\n    {...props}\n  />\n));\nDropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;\n\nexport const DropdownMenuSeparator = React.forwardRef<\n  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,\n  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>\n>(({ className, ...props }, ref) => (\n  <DropdownMenuPrimitive.Separator\n    ref={ref}\n    className={cn(\"-mx-1 my-1.5 h-[1px] bg-[var(--mkl-surface-mid)]\", className)}\n    {...props}\n  />\n));\nDropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;\n\nexport const DropdownMenuShortcut = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLSpanElement>) => {\n  return (\n    <span\n      className={cn(\"ml-auto text-[10px] tracking-widest text-[var(--mkl-steel-1)] opacity-70\", className)}\n      {...props}\n    />\n  );\n};\nDropdownMenuShortcut.displayName = \"DropdownMenuShortcut\";\n",
+      "target": "dropdown-menu.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "card",
+  "type": "registry:ui",
+  "title": "Chassis Card",
+  "description": "Armored chassis plate card with hex rivets and hazard warning lips",
+  "registryDependencies": [
+    "chassis-plate",
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/card.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\nimport { HexScrew } from \"./chassis-plate\";\n\nexport interface CardProps extends React.HTMLAttributes<HTMLDivElement> {\n  serial?: string;\n  hasScrews?: boolean;\n  hazardBorder?: boolean;\n}\n\nexport const Card = React.forwardRef<HTMLDivElement, CardProps>(\n  ({ className, serial, hasScrews = false, hazardBorder = false, children, ...props }, ref) => {\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"relative rounded-lg border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-5 font-mono text-xs text-[var(--mkl-on-surface)]\",\n          \"shadow-[0_12px_28px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)]\",\n          hazardBorder && \"border-t-4 border-t-[var(--mkl-amb)]\",\n          className\n        )}\n        {...props}\n      >\n        {hasScrews && (\n          <>\n            <HexScrew className=\"absolute top-2 left-2\" size=\"sm\" />\n            <HexScrew className=\"absolute top-2 right-2\" size=\"sm\" />\n            <HexScrew className=\"absolute bottom-2 left-2\" size=\"sm\" />\n            <HexScrew className=\"absolute bottom-2 right-2\" size=\"sm\" />\n          </>\n        )}\n\n        {serial && (\n          <div className=\"absolute top-3 right-3 text-[10px] text-[var(--mkl-steel-1)] font-mono\">\n            [{serial}]\n          </div>\n        )}\n\n        {children}\n      </div>\n    );\n  }\n);\nCard.displayName = \"Card\";\n\nexport const CardHeader = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex flex-col space-y-1.5 pb-3 border-b border-[var(--mkl-surface-mid)] mb-3\", className)}\n    {...props}\n  />\n));\nCardHeader.displayName = \"CardHeader\";\n\nexport const CardTitle = React.forwardRef<\n  HTMLHeadingElement,\n  React.HTMLAttributes<HTMLHeadingElement>\n>(({ className, ...props }, ref) => (\n  <h3\n    ref={ref}\n    className={cn(\"font-sans text-lg font-black uppercase tracking-wider text-white leading-none\", className)}\n    {...props}\n  />\n));\nCardTitle.displayName = \"CardTitle\";\n\nexport const CardDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => (\n  <p\n    ref={ref}\n    className={cn(\"font-mono text-[11px] text-[var(--mkl-steel-1)] leading-relaxed\", className)}\n    {...props}\n  />\n));\nCardDescription.displayName = \"CardDescription\";\n\nexport const CardContent = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn(\"pt-1\", className)} {...props} />\n));\nCardContent.displayName = \"CardContent\";\n\nexport const CardFooter = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"flex items-center pt-3 border-t border-[var(--mkl-surface-mid)] mt-3\", className)}\n    {...props}\n  />\n));\nCardFooter.displayName = \"CardFooter\";\n",
+      "target": "card.tsx"
+    }
+  ]
+}

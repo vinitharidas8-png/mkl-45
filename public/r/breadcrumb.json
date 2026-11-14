@@ -1,0 +1,21 @@
+{
+  "name": "breadcrumb",
+  "type": "registry:ui",
+  "title": "Chevron Breadcrumb",
+  "description": "Tactical navigation vector trail with glowing active segment",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/breadcrumb.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport { ChevronRight } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement> {\n  separator?: React.ReactNode;\n}\n\nexport function Breadcrumb({\n  className,\n  separator = <ChevronRight className=\"w-3.5 h-3.5 text-[var(--mkl-amb)] shrink-0\" />,\n  children,\n  ...props\n}: BreadcrumbProps) {\n  return (\n    <nav\n      aria-label=\"breadcrumb\"\n      className={cn(\n        \"inline-flex items-center gap-2 p-2 rounded bg-[var(--mkl-surface-lowest)] border border-[var(--mkl-surface-high)] font-mono text-xs shadow-[inset_0_1px_3px_#000] overflow-x-auto\",\n        className\n      )}\n      {...props}\n    >\n      <ol className=\"flex items-center gap-2\">{children}</ol>\n    </nav>\n  );\n}\n\nexport function BreadcrumbItem({\n  className,\n  ...props\n}: React.LiHTMLAttributes<HTMLLIElement>) {\n  return (\n    <li\n      className={cn(\"inline-flex items-center gap-2 text-[var(--mkl-steel-1)]\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function BreadcrumbLink({\n  className,\n  active,\n  ...props\n}: React.AnchorHTMLAttributes<HTMLAnchorElement> & { active?: boolean }) {\n  return (\n    <a\n      className={cn(\n        \"font-bold uppercase tracking-wider transition-colors hover:text-white\",\n        active && \"text-[var(--mkl-amb)] lcd-glow\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n",
+      "target": "breadcrumb.tsx"
+    }
+  ]
+}

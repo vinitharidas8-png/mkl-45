@@ -1,0 +1,22 @@
+{
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert Plate",
+  "description": "Cut-corner tactical alert plate with hazard-striped edge trims and system serials",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/alert.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { AlertCircle, AlertTriangle, Info, CheckCircle2 } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const alertVariants = cva(\n  \"relative w-full rounded-md border p-4 shadow-[0_8px_20px_rgba(0,0,0,0.5)] font-mono text-xs overflow-hidden\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"bg-[var(--mkl-surface)] border-[var(--mkl-surface-high)] text-[var(--mkl-on-surface)]\",\n        warning:\n          \"bg-[var(--mkl-surface-low)] border-[var(--mkl-amb)]/60 text-[var(--mkl-on-surface)]\",\n        destructive:\n          \"bg-[var(--mkl-surface-low)] border-[var(--mkl-danger)]/80 text-[var(--mkl-on-surface)]\",\n        success:\n          \"bg-[var(--mkl-surface-low)] border-[var(--mkl-emerald)]/80 text-[var(--mkl-on-surface)]\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nexport interface AlertProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof alertVariants> {\n  title?: string;\n  code?: string;\n}\n\nexport function Alert({\n  className,\n  variant = \"default\",\n  title,\n  code,\n  children,\n  ...props\n}: AlertProps) {\n  const iconMap = {\n    default: <Info className=\"w-4 h-4 text-[var(--mkl-steel-1)]\" />,\n    warning: <AlertTriangle className=\"w-4 h-4 text-[var(--mkl-amb)]\" />,\n    destructive: <AlertCircle className=\"w-4 h-4 text-[var(--mkl-danger)]\" />,\n    success: <CheckCircle2 className=\"w-4 h-4 text-[var(--mkl-emerald)]\" />,\n  };\n\n  const isWarningOrDanger = variant === \"warning\" || variant === \"destructive\";\n\n  return (\n    <div className={cn(alertVariants({ variant, className }))} {...props}>\n      {/* Tactical Hazard Edge Stripe */}\n      {isWarningOrDanger && (\n        <div\n          className={cn(\n            \"absolute left-0 top-0 bottom-0 w-2\",\n            variant === \"destructive\" ? \"hazard-stripes-danger\" : \"hazard-stripes\"\n          )}\n        />\n      )}\n\n      <div className={cn(\"flex items-start gap-3\", isWarningOrDanger && \"pl-2\")}>\n        <div className=\"mt-0.5 shrink-0\">{iconMap[variant || \"default\"]}</div>\n        <div className=\"flex-1 space-y-1\">\n          {(title || code) && (\n            <div className=\"flex items-center justify-between font-bold uppercase tracking-wider\">\n              {title && <span>{title}</span>}\n              {code && (\n                <span className=\"text-[10px] text-[var(--mkl-steel-1)]\">\n                  [{code}]\n                </span>\n              )}\n            </div>\n          )}\n          <div className=\"text-[var(--mkl-steel-1)] leading-relaxed\">\n            {children}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "target": "alert.tsx"
+    }
+  ]
+}

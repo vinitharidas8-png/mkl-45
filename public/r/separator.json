@@ -1,0 +1,21 @@
+{
+  "name": "separator",
+  "type": "registry:ui",
+  "title": "Hazard Separator",
+  "description": "Heavy physical divider with diagonal hazard striping and engraved circuit labels",
+  "dependencies": [
+    "@radix-ui/react-separator"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/separator.tsx",
+      "type": "registry:ui",
+      "content": "import * as React from \"react\";\nimport * as SeparatorPrimitive from \"@radix-ui/react-separator\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport interface SeparatorProps\n  extends React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> {\n  variant?: \"default\" | \"hazard\" | \"danger-hazard\" | \"groove\";\n  label?: string;\n}\n\nexport const Separator = React.forwardRef<\n  React.ElementRef<typeof SeparatorPrimitive.Root>,\n  SeparatorProps\n>(\n  (\n    {\n      className,\n      orientation = \"horizontal\",\n      decorative = true,\n      variant = \"default\",\n      label,\n      ...props\n    },\n    ref\n  ) => {\n    if (variant === \"hazard\" || variant === \"danger-hazard\") {\n      return (\n        <div className=\"relative w-full py-2\">\n          <div\n            className={cn(\n              \"h-2 w-full rounded-[1px] shadow-[inset_0_1px_2px_#000]\",\n              variant === \"danger-hazard\" ? \"hazard-stripes-danger\" : \"hazard-stripes\",\n              className\n            )}\n          />\n        </div>\n      );\n    }\n\n    if (label) {\n      return (\n        <div className=\"relative flex items-center py-2 select-none font-mono text-[10px] text-[var(--mkl-amb)]\">\n          <div className=\"flex-grow border-t border-[var(--mkl-surface-high)]\" />\n          <span className=\"flex-shrink mx-3 px-2 py-0.5 rounded bg-[var(--mkl-surface-low)] border border-[var(--mkl-surface-high)] font-bold tracking-widest uppercase\">\n            {label}\n          </span>\n          <div className=\"flex-grow border-t border-[var(--mkl-surface-high)]\" />\n        </div>\n      );\n    }\n\n    return (\n      <SeparatorPrimitive.Root\n        ref={ref}\n        decorative={decorative}\n        orientation={orientation}\n        className={cn(\n          \"shrink-0 bg-[var(--mkl-surface-high)]\",\n          orientation === \"horizontal\" ? \"h-[1px] w-full\" : \"h-full w-[1px]\",\n          variant === \"groove\" && \"shadow-[0_1px_0_rgba(255,255,255,0.08)]\",\n          className\n        )}\n        {...props}\n      />\n    );\n  }\n);\nSeparator.displayName = \"Separator\";\n",
+      "target": "separator.tsx"
+    }
+  ]
+}

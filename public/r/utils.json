@@ -1,0 +1,18 @@
+{
+  "name": "utils",
+  "type": "registry:lib",
+  "title": "Utilities",
+  "description": "cn() utility helper for merging class names",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/lib/utils.ts",
+      "type": "registry:lib",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "target": "utils.ts"
+    }
+  ]
+}

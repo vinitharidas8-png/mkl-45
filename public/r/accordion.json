@@ -1,0 +1,22 @@
+{
+  "name": "accordion",
+  "type": "registry:ui",
+  "title": "Inspection Hatch Accordion",
+  "description": "Sliding hardware inspection hatch accordion with LED status indicators and rotating chevrons",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/accordion.tsx",
+      "type": "registry:ui",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as AccordionPrimitive from \"@radix-ui/react-accordion\";\nimport { ChevronDown } from \"lucide-react\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Accordion = AccordionPrimitive.Root;\n\nexport const AccordionItem = React.forwardRef<\n  React.ElementRef<typeof AccordionPrimitive.Item>,\n  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>\n>(({ className, ...props }, ref) => (\n  <AccordionPrimitive.Item\n    ref={ref}\n    className={cn(\n      \"rounded border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] mb-2 overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.5)]\",\n      className\n    )}\n    {...props}\n  />\n));\nAccordionItem.displayName = \"AccordionItem\";\n\nexport const AccordionTrigger = React.forwardRef<\n  React.ElementRef<typeof AccordionPrimitive.Trigger>,\n  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {\n    serial?: string;\n  }\n>(({ className, serial, children, ...props }, ref) => (\n  <AccordionPrimitive.Header className=\"flex\">\n    <AccordionPrimitive.Trigger\n      ref={ref}\n      className={cn(\n        \"flex flex-1 items-center justify-between p-3.5 font-mono text-xs font-bold uppercase tracking-wider text-[var(--mkl-on-surface)] transition-all\",\n        \"hover:bg-[var(--mkl-surface-high)]/50 [&[data-state=open]>svg]:rotate-180\",\n        className\n      )}\n      {...props}\n    >\n      <div className=\"flex items-center gap-2\">\n        <span className=\"w-1.5 h-1.5 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_4px_var(--mkl-amb)]\" />\n        <span>{children}</span>\n        {serial && (\n          <span className=\"text-[10px] text-[var(--mkl-steel-1)] font-normal\">\n            [{serial}]\n          </span>\n        )}\n      </div>\n      <ChevronDown className=\"h-4 w-4 shrink-0 transition-transform duration-200 text-[var(--mkl-amb)]\" />\n    </AccordionPrimitive.Trigger>\n  </AccordionPrimitive.Header>\n));\nAccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;\n\nexport const AccordionContent = React.forwardRef<\n  React.ElementRef<typeof AccordionPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>\n>(({ className, children, ...props }, ref) => (\n  <AccordionPrimitive.Content\n    ref={ref}\n    className=\"overflow-hidden font-mono text-xs text-[var(--mkl-steel-1)] transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down border-t border-[var(--mkl-surface-mid)] bg-[var(--mkl-surface-low)]\"\n    {...props}\n  >\n    <div className={cn(\"p-4 leading-relaxed\", className)}>{children}</div>\n  </AccordionPrimitive.Content>\n));\nAccordionContent.displayName = AccordionPrimitive.Content.displayName;\n",
+      "target": "accordion.tsx"
+    }
+  ]
+}

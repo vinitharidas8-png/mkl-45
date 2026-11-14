@@ -1,0 +1,21 @@
+{
+  "name": "popover",
+  "type": "registry:ui",
+  "title": "BNC Pinout Popover",
+  "description": "Bolted pinout tag popover with hardware telemetry borders and callout pointer",
+  "dependencies": [
+    "@radix-ui/react-popover"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/mkl45/ui/popover.tsx",
+      "type": "registry:ui",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as PopoverPrimitive from \"@radix-ui/react-popover\";\nimport { cn } from \"@/registry/mkl45/lib/utils\";\n\nexport const Popover = PopoverPrimitive.Root;\nexport const PopoverTrigger = PopoverPrimitive.Trigger;\n\nexport const PopoverContent = React.forwardRef<\n  React.ElementRef<typeof PopoverPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & {\n    title?: string;\n    serial?: string;\n  }\n>(({ className, align = \"center\", sideOffset = 6, title, serial, children, ...props }, ref) => (\n  <PopoverPrimitive.Portal>\n    <PopoverPrimitive.Content\n      ref={ref}\n      align={align}\n      sideOffset={sideOffset}\n      className={cn(\n        \"z-50 w-72 rounded-md border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-4 font-mono text-xs text-[var(--mkl-on-surface)]\",\n        \"shadow-[0_16px_32px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.1)] outline-none\",\n        \"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95\",\n        className\n      )}\n      {...props}\n    >\n      {(title || serial) && (\n        <div className=\"flex items-center justify-between pb-2 mb-2 border-b border-[var(--mkl-surface-mid)] font-mono text-[10px] text-[var(--mkl-amb)]\">\n          {title && <span className=\"font-bold uppercase\">{title}</span>}\n          {serial && <span className=\"text-[var(--mkl-steel-1)]\">[{serial}]</span>}\n        </div>\n      )}\n      {children}\n    </PopoverPrimitive.Content>\n  </PopoverPrimitive.Portal>\n));\nPopoverContent.displayName = PopoverPrimitive.Content.displayName;\n",
+      "target": "popover.tsx"
+    }
+  ]
+}
