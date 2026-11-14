@@ -15,7 +15,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         className={cn(
           "relative rounded-lg border-2 border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] p-5 font-mono text-xs text-[var(--mkl-on-surface)]",
-          "shadow-[0_12px_28px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)]",
+          "shadow-[0_12px_32px_rgba(0,0,0,0.55),inset_1px_1px_0_rgba(255,255,255,0.12),inset_-2px_-2px_0_rgba(0,0,0,0.6)]",
           hazardBorder && "border-t-4 border-t-[var(--mkl-amb)]",
           className
         )}

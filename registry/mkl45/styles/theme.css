@@ -83,6 +83,15 @@
   --mkl-shadow-keycap-red: 0 4px 0 #7F1D1D, 0 6px 12px rgba(211, 47, 47, 0.4);
   --mkl-shadow-keycap-active: 0 1px 0 rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(0, 0, 0, 0.5);
 
+  /* 3D Depth Physical Specular & Milled Cavity Tokens */
+  --mkl-shadow-3d-chassis: 0 10px 28px rgba(0, 0, 0, 0.5), inset 1px 1px 0 rgba(255, 255, 255, 0.12), inset -2px -2px 0 rgba(0, 0, 0, 0.6);
+  --mkl-shadow-3d-slot: inset 0 3px 7px rgba(0, 0, 0, 0.95), inset 0 1px 2px #000, 0 1px 0 rgba(255, 255, 255, 0.12);
+  --mkl-shadow-3d-thumb: 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1px 1.5px rgba(255, 255, 255, 0.45), inset 0 -2px 3px rgba(0, 0, 0, 0.5);
+  --mkl-shadow-3d-thumb-red: 0 0 14px 2px rgba(239, 68, 68, 0.75), 0 0 24px 5px rgba(239, 68, 68, 0.35), 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1.5px 2px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+  --mkl-shadow-3d-thumb-amber: 0 0 14px 2px rgba(242, 176, 30, 0.75), 0 0 24px 5px rgba(242, 176, 30, 0.35), 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1.5px 2px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+  --mkl-shadow-3d-thumb-orange: 0 0 14px 2px rgba(217, 113, 47, 0.75), 0 0 24px 5px rgba(217, 113, 47, 0.35), 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1.5px 2px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+  --mkl-shadow-3d-thumb-green: 0 0 14px 2px rgba(52, 211, 153, 0.75), 0 0 24px 5px rgba(52, 211, 153, 0.35), 0 3px 6px rgba(0, 0, 0, 0.85), inset 0 1.5px 2px rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+
   /* Motion / Actuation Timings */
   --mkl-tp: 80ms;
   --mkl-ts: 300ms;

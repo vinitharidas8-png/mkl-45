@@ -23,7 +23,7 @@ export function ComponentPreview({
   return (
     <div
       className={cn(
-        "rounded-lg border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,0.5)] my-6",
+        "rounded-lg border border-[var(--mkl-surface-high)] bg-[var(--mkl-surface)] overflow-hidden shadow-[0_14px_36px_rgba(0,0,0,0.55),inset_1px_1px_0_rgba(255,255,255,0.12),inset_-2px_-2px_0_rgba(0,0,0,0.6)] my-6",
         className
       )}
     >

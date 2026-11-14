@@ -81,21 +81,23 @@ export function RotaryKnob({
       )}
 
       {/* Physical knurled aluminum knob body */}
-      <div
-        ref={knobRef}
-        onMouseDown={handleMouseDown}
-        className="relative w-16 h-16 rounded-full cursor-ns-resize flex items-center justify-center bg-gradient-to-br from-[var(--mkl-steel-1)] to-[var(--mkl-steel-2)] border-2 border-[var(--mkl-steel-edge)] shadow-[0_4px_12px_rgba(0,0,0,0.6),inset_0_2px_4px_rgba(255,255,255,0.4)]"
-      >
-        {/* Knurled outer rim texture */}
-        <div className="absolute inset-1 rounded-full border border-black/40 bg-[var(--mkl-surface)] shadow-[inset_0_2px_6px_#000]" />
-
-        {/* Center rotating core with indicator notch */}
+      <div className="p-1 rounded-full bg-[#0e0d0c] shadow-[inset_0_3px_8px_rgba(0,0,0,0.95),0_1px_1px_rgba(255,255,255,0.12)]">
         <div
-          className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#2E2D2B] to-[#1A1918] flex items-center justify-center transition-transform duration-75"
-          style={{ transform: `rotate(${angle}deg)` }}
+          ref={knobRef}
+          onMouseDown={handleMouseDown}
+          className="relative w-16 h-16 rounded-full cursor-ns-resize flex items-center justify-center bg-gradient-to-b from-[#6c6b65] via-[#4d4c47] to-[#2e2d2a] border border-white/25 shadow-[0_6px_16px_rgba(0,0,0,0.85),inset_0_1px_2px_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.7)]"
         >
-          {/* High-visibility amber indicator notch */}
-          <span className="absolute top-1 w-1 h-3 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_6px_var(--mkl-amb)]" />
+          {/* Knurled outer rim texture */}
+          <div className="absolute inset-1 rounded-full border border-black/50 bg-[#161514] shadow-[inset_0_2px_4px_#000]" />
+
+          {/* Center rotating core with indicator notch */}
+          <div
+            className="relative w-10 h-10 rounded-full bg-gradient-to-b from-[#2a2926] to-[#141312] border border-black/80 shadow-[inset_0_2px_4px_#000,0_1px_1px_rgba(255,255,255,0.2)] flex items-center justify-center transition-transform duration-75"
+            style={{ transform: `rotate(${angle}deg)` }}
+          >
+            {/* High-visibility amber indicator notch */}
+            <span className="absolute top-1 w-1 h-3.5 rounded-full bg-[var(--mkl-amb)] shadow-[0_0_8px_var(--mkl-amb)]" />
+          </div>
         </div>
       </div>
 

@@ -16,30 +16,30 @@ export const buttonVariants = cva(
         // 01 Off-white PBT Keycap (Default)
         default: [
           "bg-[var(--mkl-key)] text-[var(--mkl-surface)] font-black",
-          "border-t border-l border-white/60 border-r border-b border-[var(--mkl-key-shadow)]",
-          "shadow-[0_4px_0_var(--mkl-key-shadow),0_6px_12px_rgba(0,0,0,0.45)] hover:brightness-105",
-          "active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]",
+          "border-t border-l border-white/70 border-r border-b border-[var(--mkl-key-shadow)]",
+          "shadow-[0_4px_0_var(--mkl-key-shadow),0_8px_16px_rgba(0,0,0,0.45),inset_0_1px_1px_rgba(255,255,255,0.7),inset_0_-1px_1px_rgba(0,0,0,0.2)] hover:brightness-105",
+          "active:translate-y-[4px] active:shadow-[0_0_0_rgba(0,0,0,0.8),inset_0_2px_5px_rgba(0,0,0,0.6)]",
         ],
         // 02 Charcoal Tactical Keycap
         secondary: [
           "bg-[var(--mkl-key-dark)] text-[var(--mkl-steel-1)] font-bold",
           "border-t border-l border-[#3E3C38] border-r border-b border-black",
-          "shadow-[0_4px_0_var(--mkl-key-dark-shadow),0_6px_12px_rgba(0,0,0,0.65)] hover:text-white hover:brightness-110",
-          "active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]",
+          "shadow-[0_4px_0_var(--mkl-key-dark-shadow),0_8px_16px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.2),inset_0_-1px_1px_rgba(0,0,0,0.4)] hover:text-white hover:brightness-110",
+          "active:translate-y-[4px] active:shadow-[0_0_0_rgba(0,0,0,0.8),inset_0_2px_5px_rgba(0,0,0,0.7)]",
         ],
         // 03 Cerakote Rust Orange (Primary Command)
         primary: [
           "bg-[var(--mkl-acc)] text-white font-extrabold",
           "border-t border-l border-[var(--mkl-acc-light)] border-r border-b border-[var(--mkl-acc-dark)]",
-          "shadow-[0_4px_0_var(--mkl-acc-dark),0_6px_12px_rgba(217,113,47,0.35)] hover:brightness-110",
-          "active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]",
+          "shadow-[0_4px_0_var(--mkl-acc-dark),0_8px_16px_rgba(217,113,47,0.4),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-1px_1px_rgba(0,0,0,0.3)] hover:brightness-110",
+          "active:translate-y-[4px] active:shadow-[0_0_0_rgba(0,0,0,0.8),inset_0_2px_5px_rgba(0,0,0,0.7)]",
         ],
         // 04 Zero-Purge Emergency Red
         destructive: [
           "bg-[var(--mkl-danger)] text-white font-black",
           "border-t border-l border-[var(--mkl-danger-light)] border-r border-b border-[var(--mkl-danger-dark)]",
-          "shadow-[0_4px_0_var(--mkl-danger-dark),0_6px_12px_rgba(211,47,47,0.4)] hover:brightness-110",
-          "active:shadow-[0_1px_0_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(0,0,0,0.5)]",
+          "shadow-[0_4px_0_var(--mkl-danger-dark),0_8px_16px_rgba(211,47,47,0.45),inset_0_1px_1px_rgba(255,255,255,0.5),inset_0_-1px_1px_rgba(0,0,0,0.3)] hover:brightness-110",
+          "active:translate-y-[4px] active:shadow-[0_0_0_rgba(0,0,0,0.8),inset_0_2px_5px_rgba(0,0,0,0.7)]",
         ],
         // 05 Recessed Tray Bezel (Flush Key)
         outline: [

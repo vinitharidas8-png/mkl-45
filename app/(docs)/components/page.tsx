@@ -128,38 +128,41 @@ export default function BrowseComponentsPage() {
               <ChassisPlate
                 key={comp.name}
                 serial={`MOD-${comp.name.toUpperCase()}`}
-                hasScrews={false}
-                className="flex flex-col justify-between p-5 space-y-4 hover:border-[var(--mkl-amb)]/60 transition-colors"
+                hasScrews
+                className="flex flex-col justify-between p-6 space-y-4 hover:border-[var(--mkl-amb)]/70 transition-all shadow-[0_14px_32px_rgba(0,0,0,0.55),inset_1px_1px_0_rgba(255,255,255,0.12),inset_-2px_-2px_0_rgba(0,0,0,0.6)]"
               >
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <Badge variant="caution">{comp.category}</Badge>
-                    <span className="font-mono text-[10px] text-[var(--mkl-steel-2)]">
+                    <span className="font-mono text-[10px] text-[var(--mkl-amb)] font-bold">
                       @{comp.name}
                     </span>
                   </div>
-                  <h3 className="font-sans text-xl font-black uppercase text-white tracking-wide">
-                    {comp.title}
-                  </h3>
-                  <p className="font-mono text-xs text-[var(--mkl-steel-1)] leading-relaxed">
-                    {comp.desc}
-                  </p>
+                  <div>
+                    <h3 className="font-sans text-xl font-black uppercase text-white tracking-wide">
+                      {comp.title}
+                    </h3>
+                    <p className="font-mono text-xs text-[var(--mkl-steel-1)] leading-relaxed mt-1">
+                      {comp.desc}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="flex items-center justify-between pt-3 border-t border-[var(--mkl-surface-mid)]">
                   <Link
                     href={`/docs/components/${comp.name}`}
-                    className="font-mono text-xs font-bold text-[var(--mkl-amb)] hover:underline"
+                    className="font-mono text-xs font-bold text-[var(--mkl-amb)] hover:underline flex items-center gap-1 group"
                   >
-                    VIEW SPECS →
+                    <span>VIEW SPECS</span>
+                    <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                   </Link>
 
                   <button
                     onClick={() => toggleComponent(comp.name)}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[3px] font-mono text-xs font-bold uppercase tracking-wider transition-all duration-80 ${
+                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[3px] font-mono text-xs font-bold uppercase tracking-wider transition-all duration-80 active:translate-y-[2px] ${
                       inKit
-                        ? "bg-[var(--mkl-amb)] text-[var(--mkl-surface)] shadow-[0_2px_0_#966A06]"
-                        : "bg-[var(--mkl-surface-low)] text-[var(--mkl-key)] border border-[var(--mkl-surface-high)] hover:border-white shadow-[0_2px_0_#000]"
+                        ? "bg-[var(--mkl-amb)] text-[var(--mkl-surface)] shadow-[0_3px_0_#966A06,inset_0_1px_1px_rgba(255,255,255,0.5)]"
+                        : "bg-[var(--mkl-surface-low)] text-[var(--mkl-key)] border border-[var(--mkl-surface-high)] hover:border-white shadow-[0_3px_0_#000,inset_0_1px_1px_rgba(255,255,255,0.15)]"
                     }`}
                   >
                     {inKit ? (

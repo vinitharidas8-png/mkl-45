@@ -15,7 +15,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           className={cn(
             "w-full h-11 px-3.5 rounded-[3px] font-mono text-xs text-[var(--mkl-lcd-ink)] select-text",
-            "bg-[var(--mkl-lcd)] border border-black/80 shadow-[inset_0_3px_8px_rgba(0,0,0,0.9),inset_0_1px_2px_#000]",
+            "bg-[var(--mkl-lcd)] border border-black/90 shadow-[inset_0_3px_8px_rgba(0,0,0,0.95),inset_0_1px_2px_#000,0_1px_1px_rgba(255,255,255,0.12)]",
             "placeholder:text-[var(--mkl-lcd-ghost)] placeholder:font-mono",
             "focus:outline-none focus:border-[var(--mkl-amb)] focus:ring-1 focus:ring-[var(--mkl-amb)] focus:shadow-[inset_0_2px_6px_#000,0_0_8px_rgba(242,176,30,0.3)]",
             "disabled:opacity-40 disabled:cursor-not-allowed",

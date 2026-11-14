@@ -77,7 +77,7 @@ export const ChassisPlate = React.forwardRef<HTMLDivElement, ChassisPlateProps>(
       <div
         ref={ref}
         className={cn(
-          "relative bg-[var(--mkl-surface)] border border-[var(--mkl-surface-high)] shadow-[0_12px_28px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.08)] p-5",
+          "relative bg-[var(--mkl-surface)] border border-[var(--mkl-surface-high)] shadow-[0_12px_32px_rgba(0,0,0,0.55),inset_1px_1px_0_rgba(255,255,255,0.12),inset_-2px_-2px_0_rgba(0,0,0,0.6)] p-5",
           chamferClass,
           className
         )}

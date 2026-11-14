@@ -311,23 +311,38 @@ export function Demo() {
     title: "TOGGLE LEVER SWITCH",
     category: "FORMS",
     specCode: "MIL-DTL-3950-BAT",
-    description: "Heavy physical toggle lever with authentic spring settle overshoot dynamics and Cerakote orange actuator.",
+    description: "Heavy physical toggle lever with authentic spring settle overshoot dynamics, recessed stadium slot, and Cerakote phosphor neon bloom.",
     codeSnippet: `import { Switch } from "@/components/ui/switch";
 
 export function Demo() {
   return (
-    <Switch label="EMERGENCY SQUELCH" sublabel="LINE NOISE OVERRIDE" defaultChecked />
+    <div className="space-y-4 p-4 rounded bg-[#0e0d0c] border border-black/90 shadow-[inset_0_3px_6px_rgba(0,0,0,0.95)]">
+      <Switch
+        label="MAIN TRANSMITTER POWER"
+        sublabel="28V DC BUS ACTIVE"
+        defaultChecked
+        glowColor="red"
+      />
+      <Switch
+        label="EMERGENCY SQUELCH OVERRIDE"
+        sublabel="DISPERSES INTERFERENCE"
+        glowColor="red"
+      />
+    </div>
   );
 }`,
     renderDemo: () => (
-      <div className="space-y-4">
-        <Switch label="MAIN TRANSMITTER POWER" sublabel="28V DC BUS ACTIVE" defaultChecked />
-        <Switch label="EMERGENCY SQUELCH OVERRIDE" sublabel="DISPERSES INTERFERENCE" />
+      <div className="space-y-4 p-5 rounded bg-[#0e0d0c] border border-black/90 shadow-[inset_0_3px_7px_rgba(0,0,0,0.95),0_1px_1px_rgba(255,255,255,0.12)]">
+        <Switch label="MAIN TRANSMITTER POWER" sublabel="28V DC BUS ACTIVE" defaultChecked glowColor="red" />
+        <Switch label="EMERGENCY SQUELCH OVERRIDE" sublabel="DISPERSES INTERFERENCE" glowColor="red" />
       </div>
     ),
     propsTable: [
-      { name: "checked", type: "boolean", defaultVal: "undefined", desc: "Controlled state" },
+      { name: "checked", type: "boolean", defaultVal: "undefined", desc: "Controlled switch state" },
+      { name: "defaultChecked", type: "boolean", defaultVal: "false", desc: "Initial state for uncontrolled usage" },
+      { name: "glowColor", type: '"red" | "amber" | "orange" | "green"', defaultVal: '"red"', desc: "Active neon phosphor underglow bloom" },
       { name: "label", type: "string", defaultVal: "undefined", desc: "Primary label text" },
+      { name: "sublabel", type: "string", defaultVal: "undefined", desc: "Secondary telemetry sublabel" },
     ],
   },
 
